@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Script Ahoy</title>
+    <meta charset="utf-8">
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css.css">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/js.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </head>
+
+<body>
+<div class="container">
+
+<div class="text-center">
+  <h1>Script Ahoy</h1>
+</div>
+
+<!-- BUTTONS! -->
+<div class="row">
+
+<div class="well col-md-3 col-md-offset-0">
+  <h5>Community Resource for Archivists and Librarians Scripting</h5> <!--description here -->
+  <p>The command line is powerful but more than a little intimidating. Our community resource is intended to provide helpful one-liners and script code specifically drawn from real-life examples in archives and libraries. Take these, use them in your workflows, change them up, contribute back! Remember: you have to crawl before you walk. (See what we did there with the acronym?)</p>
+  <p>Each button displays helpful information about how to perform a wide variety of tasks on the command line. To use this site, click on the task you would like to perform. A new window will open up with a sample command and a description of how that command works. You can copy this command and understand how the command works with a breakdown of each of the flags.</p>
+  <p>Practice more command line wizardry with this <a href="http://cli.learncodethehardway.org/book/" target="_blank">Command Line Crash Course</a> from Learn Code the Hard Way.</p>
+</div>
+
+<div class="well col-md-8 col-md-offset-0">
+  <div class="well">
+  <h3>What do you want to do?</h3>
+  <h6>Select from the following.</h6>
+  </div>
+
+  <div class="well"><h4>Copy, rename, and create files</h4>
+
+  <!-- Copy JPGs -->
+  <span data-toggle="modal" data-target=".cp_jpgs"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Copy JPGs from one location to another and preserve attributes">Copy JPGs</button></span>
+  <div class="modal fade cp_jpgs" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="well">
+          <h3>Copy JPGs</h3>
+          <p><code>cp -a -i -v *.jpg <i>destination</i></code></p>
+          <p>Copy all jpg files into another directory and preserve timestamps.</p>
+          <dl>
+            <dt>cp</dt><dd>starts the command, which copies files and directories.</dd>
+            <dt>-a</dt><dd>preserves timestamp information for copied files.</dd>
+            <dt>-i</dt><dd>will prompt when a file with the same name already exists in the <i>destination</i> directory. (You can ignore this if you don't need or want prompting; alternatively you can use -n if you want copy to <i>never</i> overwrite a file with the same name in the <i>destination</i>.</dd>
+            <dt>-v</dt><dd>prints out all files successfully copied. (You can ignore this if you don't need the feedback.)</dd>
+            <dt><i>destination</i></dt><dd>is the directory where you want the files copied to.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Ends Copy JPGs -->
+
+  <!-- Rename files -->
+  <span data-toggle="modal" data-target=".rename_files"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Remove whitespace from file names and replace them with underscores">Remove spaces from file names</button></span>
+  <div class="modal fade rename_files" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="well">
+          <h3>Remove spaces from file names</h3>
+          <p><code>rename -n -v "s/\s+/_g" *</code></p>
+          <p>This command will test a batch replacement of all whitespace characters in a filename with underscores.</p>
+          <dl>
+            <dt>rename</dt><dd>starts the command, which renames multiple files.</dd>
+            <dt>-n</dt><dd>tells rename to only print the names of files to be renamed, but doesn't actually rename anything. (When you’re ready to batch rename, reissue the command without -n.)</dd>
+            <dt>-v</dt><dd>tells rename to print out the names of the files that will be successfully renamed. (You can leave this out if you don’t need confirmation.)</dd>
+            <dt>"s/\s+/_g"</dt><dd>is a regular expression that says to replace all whitespace characters (e.g., space, tab, newline) with an underscore.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ends Rename files -->
+
+  <!-- Create multiple directories -->
+  <span data-toggle="modal" data-target=".create_dirs"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Create multiple directories following a template">Create multiple directories</button></span>
+  <div class="modal fade create_dirs" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="well">
+          <h3>Create multiple directories</h3>
+          <p><code>mkdir -p -v disk{001..100}/{rawFiles,normalizedFiles,reports}</code></p>
+          <p>This command makes one hundred sequentially named directories with a common prefix, and create three subdirectories (named rawFiles, normalizedFiles, and reports) underneath each parent directory.</p>
+          <dl>
+            <dt>mkdir</dt><dd>starts the command, which makes directories.</dd>
+            <dt>-p</dt><dd>tells mkdir to create parent directories when they do not already exist.</dd>
+            <dt>-v</dt><dd>tells mkdir to print a message for each new directory created.</dd>
+            <dt>disk</dt><dd>prepends the literal string "disk".</dd>
+            <dt>{001..100}</dt><dd> prints out every number in the range from 1 to 100, right padding with zeros so each number has three digits.</dd>
+            <dt>/</dt><dd>is the path delimiter and separates a parent and child directory.</dd>
+            <dt>{rawFiles,normalizedFiles,reports}</dt><dd>prints out each string -- rawFiles, normalizedFiles, reports -- one at a time.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ends Create multiple directories -->
+
+  <!-- Use rsync -->
+  <span data-toggle="modal" data-target=".rsync"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Use rsync to synchronize files across directories">Use rsync</button></span>
+  <div class="modal fade rsync" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="well">
+          <h3>Use rsync</h3>
+          <p><code> rsync -a -h --progress --stats --exclude=".*" --exclude="~*" --log-file=log_file <i>source</i> <i>destination</i></code></p>
+          <p>This command will recursively synchronize select files from one directory to another. (Note: rsync is generally used when you are copying data off of one storage medium to another, such as from your workstation to an external hard drive.)</p>
+          <dl>
+            <dt>rsync</dt><dd>starts the command, which is a file-copying tool.</dd>
+            <dt>-a</dt><dd>preserves timestamp information</dd>
+            <dt>-h</dt><dd>prints out file size information in a human readable format. (You can omit this if you’re a robot.)</dd>
+            <dt>--progress</dt><dd>prints out a graphical progress bar while rsync is copying files</dd>
+            <dt>--exclude=".*"</dt><dd>tells rsync not to copy any hidden files (i.e., files that start with a dot)</dd>
+            <dt>--exclude="~*"</dt><dd> tells rsync not to copy any temporary files (i.e., files that start with a tilde)</dd>
+            <dt>--log-file=<i>log_file</i></dt>tells rsync to place a log in the file named <i>log_file</i></dd>
+            <dt><i>source</i></dt><dd>is where you want rsync to copy from</dd>
+            <dt><i>destination</i></dt><dd>is the directory where you want rsync to copy files into.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ends Use rsync -->
+
+  <!-- Append file extensions -->
+  <span data-toggle="modal" data-target=".append_extension"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Append file extensions to every file in a directory">Append file extensions</button></span>
+  <div class="modal fade append_extension" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="well">
+          <h3>Append file extensions</h3>
+          <p><code>for files in *; do mv “$files” “$files.doc”; done</code></p>
+          <p>Append the extension .doc to all files in a directory.</p>
+          <p>This script, which uses a loop, deploys the move command to rename a directory of files with their current filename plus the extension .doc. This will be helpful when working with a folder of homogenous files of the same type that, for one reason or another, lack file extensions. The absence of file extensions is a very common pattern of documents from the mid to late 1990s. This script quickly solves the problem and can be executed directly from your Terminal window.</p>
+          <dl>
+            <dt>for files in *;</dt><dd>starts the loop</dd>
+            <dt>do mv "$files" "$files.doc";</dt><dd>for each matched file in the directory, move it to a new file with the same name and .doc appended to it.</dd>
+            <dt>done</dt><dd>ends the loop.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ends Append file extensions -->
+
+  </div> <!-- ends Copy, rename and create files -->
+
+  <div class="well">
+  <h4>Find and interpret files</h4>
+
+  <!-- Find all zips -->
+  <span data-toggle="modal" data-target=".find_zips"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Find all ZIP files in a directory">Find all ZIPs</button></span>
+  <div class="modal fade find_zips" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="well">
+          <h3>Find all ZIP files in a directory</h3>
+          <p><code>ls *.zip</code></p>
+          <p>This will find all of the .zip files in a particular directory.</p>
+          <dl>
+            <dt>ls</dt><dd>starts the command, which lists directory contents.</dd>
+            <dt>*.zip</dt><dd>tells ls to match every file (represented by the asterisk) that is followed by a dot and the three letter string "zip".</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ends Find all zips -->
+
+  <!-- Count MP3s -->
+  <span data-toggle="modal" data-target=".count_mp3s"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Count MP3s in a directory and print results">Count MP3s in a directory</button></span>
+  <div class="modal fade count_mp3s" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="well">
+          <h3>Count MP3s in a directory</h3>
+          <p><code> ls *.mp3 | wc -l</code></p>
+          <p>This command will count the number of MP3 files in a directory.</p>
+          <dl>
+            <dt>ls</dt><dd>starts the command, which lists directory contents.</dd>
+            <dt>*.mp3</dt><dd>says to print out every file that ends in .mp3</dd>
+            <dt>|</dt>(pipe) indicates the output of the first command will be passed as input for the next command.
+            <dt>wc</dt><dd>starts the next command, which prints line, word, and byte counts of input.</dd>
+            <dt>-l</dt><dd>tells <code>wc</code> to only print the number of lines</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ends Count MP3s -->
+
+  <!-- Print columns -->
+  <span data-toggle="modal" data-target=".print_columns"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Print specific columns from a tab-delimited file">Print columns</button></span>
+  <div class="modal fade print_columns" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="well">
+        <h3>Print columns from a tab-delimited file</h3>
+          <p><code>cut -f2 <i>input_file</i></code></p>
+          <p>This will print the second column of a tab-delimited file.</p>
+          <dl>
+            <dt>cut</dt><dd>starts the command, which removes sections from each line of files.</dd>
+            <dt>-f2</dt><dd>tells cut to select the second field (column) for printing.</dd>
+            <dt><i>input_file</i></dt><dd>is the name of the file you want to print from.</dd>
+          </dl>
+          <p><code>cut -f2 -d',' <i>input_file</i></code></p>
+          <p>If your file uses a different delimited, such as a comma, you can adjust the command as shown above.
+          <dl>
+            <dt>-d','</dt><dd>specifies the character that is used as a delimiter; here, a comma.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ends Print columns -->
+
+
+  <!-- Find oldest file -->
+  <span data-toggle="modal" data-target=".find_oldest"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Find and print the oldest file and print its modification date">Find oldest file</button></span>
+  <div class="modal fade find_oldest" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="well">
+          <h3>Find oldest file and print its modification date in a friendly format</h3>
+          <p><code> find -type f -printf '%T+\t%TY-%TB-%Td\t%p\n' | sort -n | head -n 1 | cut -f2,3</code></p>
+          <p>Find and print the oldest file and display its modified date in a friendly format.</p>
+          <dl>
+            <dt>find</dt><dd>starts the command, which searches for file in a directory hierarchy.</dd>
+            <dt>-type f</dt><dd> tells find to look for files (and not directories).</dd>
+            <dt>-printf '%T+\t%TY-%TB-%Td\t%p\n'</dt><dd>tells find to print the exact modification time, a nicely-formatted version of the date, and the filename, separated by tabs.</dd>
+            <dt>|</dt><dd>(pipe) indicates the output of the first command will be passed as input for the next command.</dd>
+            <dt>sort -n</dt><dd>tells find to sort the output of the previous command numerically.</dd>
+            <dt>|</dt><dd>(pipe) indicates the output of the first command will be passed as input for the next command.</dd>
+            <dt>head -n 1</dt><dd>says to select just the first line of the previous output. Here it is the “smallest” (i.e., earliest) timestamp. You can replace this with tail -n 1 to find the “largest” (i.e., latest) timestamp.</dd>
+            <dt>|</dt><dd>(pipe) indicates the output of the first command will be passed as input for the next command.</dd>
+            <dt>cut -f2,3</dt><dd>says to print the second and third columns only (with the nicely formatted date and filename).</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ends Find oldest file -->
+
+  <!-- Count files and directories -->
+  <span data-toggle="modal" data-target=".count_files"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Count files and directories and print out results">Count files and directories</button></span>
+  <div class="modal fade count_files" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="well">
+          <h3>Count files and directories</h3>
+          <p><code>echo "Digital Folders: $(find -type d | wc -l); Digital Files: $(find -type f | wc -l)"</code></p>
+          <p>The script queries a directory (using find), counts the number of new lines (using wc) to determine the number of directories (-type d) and files (-type f), then prints the output to the screen.</p>
+          <dl>
+            <dt>echo</dt><dd>starts the command, which displays a line a text.</dd>
+            <dt>"Digital Folders: </dt><dd>prints a literal string</dd>
+            <dt>$(find -type d | wc -l);</dt><dd>is a subquery that uses <code>find -type d</code> to find all directories and then pipes that to <code>wc -l</code> to count the number of lines of output.</dd>
+            <dt>Digital Files: </dt><dd>prints a literal string</dd>
+            <dt>$(find -type f | wc -l)</dt><dd>is a subquery that uses <codee>find -typd f</code> to find all files and then pipes that to <code>wc -l</code> to count the number of lines of output.</dd>
+            <p>Don't forget to end the command with quotes.</p>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ends Count files and directories -->
+
+  </div><!-- ends Find and intrepret files -->
+
+
+
+</div><!-- closes the well -->
+
+
+<!-- sample example -->
+<!-- <span data-toggle="modal" data-target=".*****unique name*****"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="*****Hover-over description*****">*****Small title****</button></span>
+Change the above data-target field, the button text, and the below div class (the word after modal fade)
+<div class="modal fade *****unique name*****" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      where the text goes
+      <div class="well">
+        <h3>*****Longer title*****</h3>
+        <p> <code>ffmpeg -i <i>input_file</i></code>  *****code goes here***** <i>output_file</i></p>
+        <p>This is all about info! This is all about info! This is all about info! This is all about info! This is all about info! This is all about info! This is all about info! This is all about info! This is all about info! This is all about info! This is all about info! This is all about info! This is all about info! This is all about info!</p>
+        <dl>
+          <dt>ffmpeg</dt><dd>starts the command</dd>
+          <dt>-i <i>input file</i></dt><dd>path, name and extension of the input file</dd>
+          <dt>*****parameter*****</dt><dd>*****comments*****</dd>
+          <dt><i>output file</i></dt><dd>path, name and extension of the output file</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- ends sample example -->
+
+
+</div> <!-- end "well col-md-6 col-md-offset-2" -->
+</div> <!-- row -->
+
+<div class="footer text-center"><!-- FOOBAR credit appropriately -->
+  <p>Created by <a href="https://twitter.com/jmddrake">Jarrett Drake</a> and <a href="http://twitter.com/smallandmath">Dianne Dietrich</a>.</p>
+  <p>Help us add more helpful command line scripts for archivists and librarians: Contribute on GitHub!</p>
+  <p>This tool has been adapted from the amazing <a href="http://amiaopensource.github.io/ffmprovisr/">ffmprovisr</a>. We simply could not done it without them. Check it out!</p>
+</div>
+
+</div> <!-- class="container" -->
+</body>
+</html>
