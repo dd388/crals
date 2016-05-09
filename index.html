@@ -273,12 +273,68 @@
     </div>
   </div>
   <!-- ends Count files and directories -->
+</div><!-- ends Find and intrepret files -->
 
-  </div><!-- ends Find and intrepret files -->
+ <div class="well">
+  <h4>Add helpful flags into bash shell scripts</h4>
+  <!-- Don't overwrite files on redirect -->
+  <span data-toggle="modal" data-target=".noclobber"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Don't accidentally overwrite existing files">Don't overwrite files</button></span>
+  <div class="modal fade noclobber" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="well">
+          <h3>Don't accidentally overwrite existing files</h3>
+          <p><code>set -o noclobber</code></p>
+          <p>Set a flag so that you don't accidentally overwrite existing files when redirecting output from another command. This can be helpful if you are trying to create log files from the output of your script, but want to ensure that you don't write over any file that already exists.</p>
+          <p>Add this line after <code>#!/bin/bash</code> and before the rest of your code starts.</p>
+          <p>You can also issue this command in a Terminal window, but know that its effects are not permanent. (Meaning that, if you open a new Terminal window, you'll have to issue the command again to get the same effect.)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ends Don't overwrite files on redirect -->
+
+  <!-- Exit after any error -->
+  <span data-toggle="modal" data-target=".exiterr"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Exit a script immediately if any command returns an error">Exit immediately after error</button></span>
+  <div class="modal fade exiterr" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="well">
+          <h3>Exit a script immediately if any command returns an error</h3>
+          <p><code>set -o errexit</code></p>
+          <p>Set a flag so that if any one part of your shell script returns an error, the entire script stops. This can be super helpful if you have a loop in your script: the script will not issue multiple consecutive errors but instead quit after the first one. This also can be helpful if you are debugging someone else's code and are not sure why it is not working on your system.</p>
+          <p>Add this line after <code>#!/bin/bash</code> and before the rest of your code starts.</p>
+          <p>You can also issue this command in a Terminal window, but know that its effects are not permanent. (Meaning that, if you open a new Terminal window, you'll have to issue the command again to get the same effect.)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ends Exit after any error -->
+
+  <!-- Battle whitespace in filenames -->
+  <span data-toggle="modal" data-target=".whitespacefile"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="One technique for handling whitespace in filenames">Handle whitespaces in filenames</button></span>
+  <div class="modal fade whitespacefile" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="well">
+          <h3>One technique for handling whitespace in filenames</h3>
+          <p><code>IFS=$'\n'</code></p>
+          <p>Set a flag so that bash only interprets new lines as delimiters. Use this if you find that, in your code, you are getting weird errors because certain filenames have spaces in them, and there's no other way around that. (i.e., If you're not allowed or don't want to rename files that have spaces in them.)</p>
+          <p>Add this line after <code>#!/bin/bash</code> and before the rest of your code starts.</p>
+          <p>You can also issue this command in a Terminal window, but know that its effects are not permanent. (Meaning that, if you open a new Terminal window, you'll have to issue the command again to get the same effect.)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ends Battle whitespace in filenames -->
+
+
+</div><!-- Ends helpful stuff in bash scripts -->
 
 
 
-</div><!-- closes the well -->
+</div><!-- closes the big well -->
+
 
 
 <!-- sample example -->
