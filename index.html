@@ -166,7 +166,7 @@
         <div class="well">
           <h3>Find all ZIP files in a directory</h3>
           <p><code>ls *.zip</code></p>
-          <p>This will find all of the .zip files in a particular directory.</p>
+          <p>This will find all of the .zip files in a particular directory. Note that it will not find files in subdirectories.</p>
           <dl>
             <dt>ls</dt><dd>starts the command, which lists directory contents.</dd>
             <dt>*.zip</dt><dd>tells ls to match every file (represented by the asterisk) that is followed by a dot and the three letter string "zip".</dd>
@@ -185,7 +185,7 @@
         <div class="well">
           <h3>Count MP3s in a directory</h3>
           <p><code> ls *.mp3 | wc -l</code></p>
-          <p>This command will count the number of MP3 files in a directory.</p>
+          <p>This command will count the number of MP3 files in a directory. Note that it will not count files in subdirectories.</p>
           <dl>
             <dt>ls</dt><dd>starts the command, which lists directory contents.</dd>
             <dt>*.mp3</dt><dd>says to print out every file that ends in .mp3</dd>
