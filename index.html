@@ -40,8 +40,8 @@
   <div class="well"><h4>Copy, rename, and create files</h4>
 
   <!-- Copy JPGs -->
-  <span data-toggle="modal" data-target=".cp_jpgs"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Copy JPGs from one location to another and preserve attributes">Copy JPGs</button></span>
-  <div class="modal fade cp_jpgs" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <span data-toggle="modal" data-target="#cp_jpgs"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Copy JPGs from one location to another and preserve attributes">Copy JPGs</button></span>
+  <div id="cp_jpgs" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="well">
@@ -55,6 +55,7 @@
             <dt>-v</dt><dd>prints out all files successfully copied. (You can ignore this if you don't need the feedback.)</dd>
             <dt><i>destination</i></dt><dd>is the directory where you want the files copied to.</dd>
           </dl>
+          <p class="link"></p>
         </div>
       </div>
     </div>
@@ -62,8 +63,8 @@
   <!-- Ends Copy JPGs -->
 
   <!-- Rename files -->
-  <span data-toggle="modal" data-target=".rename_files"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Remove whitespace from file names and replace them with underscores">Remove spaces from file names</button></span>
-  <div class="modal fade rename_files" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <span data-toggle="modal" data-target="#rename_files"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Remove whitespace from file names and replace them with underscores">Remove spaces from file names</button></span>
+  <div id="rename_files" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="well">
@@ -76,6 +77,7 @@
             <dt>-v</dt><dd>tells rename to print out the names of the files that will be successfully renamed. (You can leave this out if you don’t need confirmation.)</dd>
             <dt>"s/\s+/_g"</dt><dd>is a regular expression that says to replace all whitespace characters (e.g., space, tab, newline) with an underscore.</dd>
           </dl>
+          <p class="link"></p>
         </div>
       </div>
     </div>
@@ -83,8 +85,8 @@
   <!-- ends Rename files -->
 
   <!-- Create multiple directories -->
-  <span data-toggle="modal" data-target=".create_dirs"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Create multiple directories following a template">Create multiple directories</button></span>
-  <div class="modal fade create_dirs" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <span data-toggle="modal" data-target="#create_dirs"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Create multiple directories following a template">Create multiple directories</button></span>
+  <div id="create_dirs" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="well">
@@ -100,6 +102,7 @@
             <dt>/</dt><dd>is the path delimiter and separates a parent and child directory.</dd>
             <dt>{rawFiles,normalizedFiles,reports}</dt><dd>prints out each string -- rawFiles, normalizedFiles, reports -- one at a time.</dd>
           </dl>
+          <p class="link"></p>
         </div>
       </div>
     </div>
@@ -107,8 +110,8 @@
   <!-- ends Create multiple directories -->
 
   <!-- Use rsync -->
-  <span data-toggle="modal" data-target=".rsync"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Use rsync to synchronize files across directories">Use rsync</button></span>
-  <div class="modal fade rsync" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <span data-toggle="modal" data-target="#rsync"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Use rsync to synchronize files across directories">Use rsync</button></span>
+  <div id="rsync" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="well">
@@ -126,6 +129,7 @@
             <dt><i>source</i></dt><dd>is where you want rsync to copy from</dd>
             <dt><i>destination</i></dt><dd>is the directory where you want rsync to copy files into.</dd>
           </dl>
+          <p class="link"></p>
         </div>
       </div>
     </div>
@@ -133,8 +137,8 @@
   <!-- ends Use rsync -->
 
   <!-- Append file extensions -->
-  <span data-toggle="modal" data-target=".append_extension"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Append file extensions to every file in a directory">Append file extensions</button></span>
-  <div class="modal fade append_extension" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <span data-toggle="modal" data-target="#append_extension"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Append file extensions to every file in a directory">Append file extensions</button></span>
+  <div id="append_extension" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="well">
@@ -147,6 +151,7 @@
             <dt>do mv "$files" "$files.doc";</dt><dd>for each matched file in the directory, move it to a new file with the same name and .doc appended to it.</dd>
             <dt>done</dt><dd>ends the loop.</dd>
           </dl>
+          <p class="link"></p>
         </div>
       </div>
     </div>
@@ -159,8 +164,8 @@
   <h4>Find and interpret files</h4>
 
   <!-- Find all zips -->
-  <span data-toggle="modal" data-target=".find_zips"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Find all ZIP files in a directory">Find all ZIPs</button></span>
-  <div class="modal fade find_zips" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <span data-toggle="modal" data-target="#find_zips"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Find all ZIP files in a directory">Find all ZIPs</button></span>
+  <div id="find_zips" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="well">
@@ -171,6 +176,7 @@
             <dt>ls</dt><dd>starts the command, which lists directory contents.</dd>
             <dt>*.zip</dt><dd>tells ls to match every file (represented by the asterisk) that is followed by a dot and the three letter string "zip".</dd>
           </dl>
+          <p class="link"></p>
         </div>
       </div>
     </div>
@@ -178,8 +184,8 @@
   <!-- ends Find all zips -->
 
   <!-- Count MP3s -->
-  <span data-toggle="modal" data-target=".count_mp3s"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Count MP3s in a directory and print results">Count MP3s in a directory</button></span>
-  <div class="modal fade count_mp3s" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <span data-toggle="modal" data-target="#count_mp3s"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Count MP3s in a directory and print results">Count MP3s in a directory</button></span>
+  <div id="count_mp3s" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="well">
@@ -193,6 +199,7 @@
             <dt>wc</dt><dd>starts the next command, which prints line, word, and byte counts of input.</dd>
             <dt>-l</dt><dd>tells <code>wc</code> to only print the number of lines</dd>
           </dl>
+          <p class="link"></p>
         </div>
       </div>
     </div>
@@ -200,8 +207,8 @@
   <!-- ends Count MP3s -->
 
   <!-- Print columns -->
-  <span data-toggle="modal" data-target=".print_columns"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Print specific columns from a tab-delimited file">Print columns</button></span>
-  <div class="modal fade print_columns" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <span data-toggle="modal" data-target="#print_columns"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Print specific columns from a tab-delimited file">Print columns</button></span>
+  <div id="print_columns" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="well">
@@ -218,6 +225,7 @@
           <dl>
             <dt>-d','</dt><dd>specifies the character that is used as a delimiter; here, a comma.</dd>
           </dl>
+          <p class="link"></p>
         </div>
       </div>
     </div>
@@ -226,8 +234,8 @@
 
 
   <!-- Find oldest file -->
-  <span data-toggle="modal" data-target=".find_oldest"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Find and print the oldest file and print its modification date">Find oldest file</button></span>
-  <div class="modal fade find_oldest" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <span data-toggle="modal" data-target="#find_oldest"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Find and print the oldest file and print its modification date">Find oldest file</button></span>
+  <div id="find_oldest" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="well">
@@ -245,6 +253,7 @@
             <dt>|</dt><dd>(pipe) indicates the output of the first command will be passed as input for the next command.</dd>
             <dt>cut -f2,3</dt><dd>says to print the second and third columns only (with the nicely formatted date and filename).</dd>
           </dl>
+          <p class="link"></p>
         </div>
       </div>
     </div>
@@ -252,8 +261,8 @@
   <!-- ends Find oldest file -->
 
   <!-- Count files and directories -->
-  <span data-toggle="modal" data-target=".count_files"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Count files and directories and print out results">Count files and directories</button></span>
-  <div class="modal fade count_files" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <span data-toggle="modal" data-target="#count_files"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Count files and directories and print out results">Count files and directories</button></span>
+  <div id="count_files" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="well">
@@ -268,6 +277,7 @@
             <dt>$(find -type f | wc -l)</dt><dd>is a subquery that uses <codee>find -typd f</code> to find all files and then pipes that to <code>wc -l</code> to count the number of lines of output.</dd>
             <p>Don't forget to end the command with quotes.</p>
           </dl>
+          <p class="link"></p>
         </div>
       </div>
     </div>
@@ -278,8 +288,8 @@
  <div class="well">
   <h4>Add helpful flags into bash shell scripts</h4>
   <!-- Don't overwrite files on redirect -->
-  <span data-toggle="modal" data-target=".noclobber"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Don't accidentally overwrite existing files">Don't overwrite files</button></span>
-  <div class="modal fade noclobber" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <span data-toggle="modal" data-target="#noclobber"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Don't accidentally overwrite existing files">Don't overwrite files</button></span>
+  <div id="noclobber" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="well">
@@ -288,6 +298,7 @@
           <p>Set a flag so that you don't accidentally overwrite existing files when redirecting output from another command. This can be helpful if you are trying to create log files from the output of your script, but want to ensure that you don't write over any file that already exists.</p>
           <p>Add this line after <code>#!/bin/bash</code> and before the rest of your code starts.</p>
           <p>You can also issue this command in a Terminal window, but know that its effects are not permanent. (Meaning that, if you open a new Terminal window, you'll have to issue the command again to get the same effect.)</p>
+          <p class="link"></p>
         </div>
       </div>
     </div>
@@ -295,8 +306,8 @@
   <!-- ends Don't overwrite files on redirect -->
 
   <!-- Exit after any error -->
-  <span data-toggle="modal" data-target=".exiterr"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Exit a script immediately if any command returns an error">Exit immediately after error</button></span>
-  <div class="modal fade exiterr" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <span data-toggle="modal" data-target="#exiterr"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Exit a script immediately if any command returns an error">Exit immediately after error</button></span>
+  <div id="exiterr" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="well">
@@ -305,6 +316,7 @@
           <p>Set a flag so that if any one part of your shell script returns an error, the entire script stops. This can be super helpful if you have a loop in your script: the script will not issue multiple consecutive errors but instead quit after the first one. This also can be helpful if you are debugging someone else's code and are not sure why it is not working on your system.</p>
           <p>Add this line after <code>#!/bin/bash</code> and before the rest of your code starts.</p>
           <p>You can also issue this command in a Terminal window, but know that its effects are not permanent. (Meaning that, if you open a new Terminal window, you'll have to issue the command again to get the same effect.)</p>
+          <p class="link"></p>
         </div>
       </div>
     </div>
@@ -312,8 +324,8 @@
   <!-- ends Exit after any error -->
 
   <!-- Battle whitespace in filenames -->
-  <span data-toggle="modal" data-target=".whitespacefile"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="One technique for handling whitespace in filenames">Handle whitespaces in filenames</button></span>
-  <div class="modal fade whitespacefile" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <span data-toggle="modal" data-target="#whitespacefile"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="One technique for handling whitespace in filenames">Handle whitespaces in filenames</button></span>
+  <div id="whitespacefile" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="well">
@@ -322,6 +334,7 @@
           <p>Set a flag so that bash only interprets new lines as delimiters. Use this if you find that, in your code, you are getting weird errors because certain filenames have spaces in them, and there's no other way around that. (i.e., If you're not allowed or don't want to rename files that have spaces in them.)</p>
           <p>Add this line after <code>#!/bin/bash</code> and before the rest of your code starts.</p>
           <p>You can also issue this command in a Terminal window, but know that its effects are not permanent. (Meaning that, if you open a new Terminal window, you'll have to issue the command again to get the same effect.)</p>
+          <p class="link"></p>
         </div>
       </div>
     </div>
@@ -338,9 +351,9 @@
 
 
 <!-- sample example -->
-<!-- <span data-toggle="modal" data-target=".*****unique name*****"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="*****Hover-over description*****">*****Small title****</button></span>
+<!-- <span data-toggle="modal" data-target="#*****unique name*****"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="*****Hover-over description*****">*****Small title****</button></span>
 Change the above data-target field, the button text, and the below div class (the word after modal fade)
-<div class="modal fade *****unique name*****" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+<div id="*****unique name*****" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       where the text goes
@@ -354,6 +367,7 @@ Change the above data-target field, the button text, and the below div class (th
           <dt>*****parameter*****</dt><dd>*****comments*****</dd>
           <dt><i>output file</i></dt><dd>path, name and extension of the output file</dd>
         </dl>
+        <p class="link"></p>
       </div>
     </div>
   </div>
