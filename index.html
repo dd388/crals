@@ -41,12 +41,12 @@
 
   <!-- Copy JPGs -->
   <span data-toggle="modal" data-target="#copy_jpgs"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Copy JPGs from one location to another and preserve attributes">Copy JPGs</button></span>
-  <div id="copy_jpgs" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="copy_jpgs-title">
+  <div id="copy_jpgs" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="copy_jpgs_title">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="copy_jpgs-title" class="modal-title">Copy JPGs</h3>
+          <h3 id="copy_jpgs_title" class="modal-title">Copy JPGs</h3>
         </div>
         <div class="modal-body">
           <p><code>cp -a -i -v *.jpg <i>destination</i></code></p>
@@ -67,12 +67,12 @@
 
   <!-- Rename files -->
   <span data-toggle="modal" data-target="#rename_files"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Remove whitespace from file names and replace them with underscores">Remove spaces from file names</button></span>
-  <div id="rename_files" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="rename_files-title">
+  <div id="rename_files" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="rename_files_title">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="rename_files-title" class="modal-title">Remove spaces from file names</h3>
+          <h3 id="rename_files_title" class="modal-title">Remove spaces from file names</h3>
         </div>
         <div class="modal-body">
           <p><code>rename -n -v "s/\s+/_g" *</code></p>
@@ -92,12 +92,12 @@
 
   <!-- Create multiple directories -->
   <span data-toggle="modal" data-target="#create_dirs"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Create multiple directories following a template">Create multiple directories</button></span>
-  <div id="create_dirs" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="create_dirs-title">
+  <div id="create_dirs" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="create_dirs_title">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="create_dirs-title" class="modal-title">Create multiple directories</h3>
+          <h3 id="create_dirs_title" class="modal-title">Create multiple directories</h3>
         </div>
         <div class="modal-body">
           <p><code>mkdir -p -v disk{001..100}/{rawFiles,normalizedFiles,reports}</code></p>
@@ -120,12 +120,12 @@
 
   <!-- Use rsync -->
   <span data-toggle="modal" data-target="#rsync"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Use rsync to synchronize files across directories">Use rsync</button></span>
-  <div id="rsync" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="rsync-title">
+  <div id="rsync" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="rsync_title">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="rsync-title" class="modal-title">Use rsync</h3>
+          <h3 id="rsync_title" class="modal-title">Use rsync</h3>
         </div>
         <div class="modal-body">
           <p><code> rsync -a -h --progress --stats --exclude=".*" --exclude="~*" --log-file=log_file <i>source</i> <i>destination</i></code></p>
@@ -150,12 +150,12 @@
 
   <!-- Append file extensions -->
   <span data-toggle="modal" data-target="#append_extension"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Append file extensions to every file in a directory">Append file extensions</button></span>
-  <div id="append_extension" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="append_extension-title">
+  <div id="append_extension" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="append_extension_title">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="append_extension-title" class="modal-title">Append file extensions</h3>
+          <h3 id="append_extension_title" class="modal-title">Append file extensions</h3>
         </div>
         <div class="modal-body">
           <p><code>for files in *; do mv “$files” “$files.doc”; done</code></p>
@@ -180,12 +180,12 @@
 
   <!-- Find all zips -->
   <span data-toggle="modal" data-target="#find_zips"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Find all ZIP files in a directory">Find all ZIPs</button></span>
-  <div id="find_zips" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="find_zips-title">
+  <div id="find_zips" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="find_zips_title">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="find_zips-title" class="modal-title">Find all ZIP files in a directory</h3>
+          <h3 id="find_zips_title" class="modal-title">Find all ZIP files in a directory</h3>
         </div>
         <div class="modal-body">
           <p><code>ls *.zip</code></p>
@@ -203,12 +203,12 @@
 
   <!-- Count MP3s -->
   <span data-toggle="modal" data-target="#count_mp3s"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Count MP3s in a directory and print results">Count MP3s in a directory</button></span>
-  <div id="count_mp3s" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="count_mp3s-title">
+  <div id="count_mp3s" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="count_mp3s_title">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="count_mp3s-title" class="modal-title">Count MP3s in a directory</h3>
+          <h3 id="count_mp3s_title" class="modal-title">Count MP3s in a directory</h3>
         </div>
         <div class="modal-body">
           <p><code> ls *.mp3 | wc -l</code></p>
@@ -229,12 +229,12 @@
 
   <!-- Print columns -->
   <span data-toggle="modal" data-target="#print_columns"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Print specific columns from a tab-delimited file">Print columns</button></span>
-  <div id="print_columns" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="print_columns-title">
+  <div id="print_columns" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="print_columns_title">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="print_columns-title" class="modal-title">Print columns from a tab-delimited file</h3>
+          <h3 id="print_columns_title" class="modal-title">Print columns from a tab-delimited file</h3>
         </div>
         <div class="modal-body">
           <p><code>cut -f2 <i>input_file</i></code></p>
@@ -259,12 +259,12 @@
 
   <!-- Find oldest file -->
   <span data-toggle="modal" data-target="#find_oldest"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Find and print the oldest file and print its modification date">Find oldest file</button></span>
-  <div id="find_oldest" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="find_oldest-title">
+  <div id="find_oldest" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="find_oldest_title">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="find_oldest-title" class="modal-title">Find oldest file and print its modification date in a friendly format</h3>
+          <h3 id="find_oldest_title" class="modal-title">Find oldest file and print its modification date in a friendly format</h3>
         </div>
         <div class="modal-body">
           <p><code> find -type f -printf '%T+\t%TY-%TB-%Td\t%p\n' | sort -n | head -n 1 | cut -f2,3</code></p>
@@ -289,12 +289,12 @@
 
   <!-- Count files and directories -->
   <span data-toggle="modal" data-target="#count_files"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Count files and directories and print out results">Count files and directories</button></span>
-  <div id="count_files" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="count_files-title">
+  <div id="count_files" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="count_files_title">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="count_files-title" class="modal-title">Count files and directories</h3>
+          <h3 id="count_files_title" class="modal-title">Count files and directories</h3>
         </div>
         <div class="modal-body">
           <p><code>echo "Digital Folders: $(find -type d | wc -l); Digital Files: $(find -type f | wc -l)"</code></p>
@@ -320,12 +320,12 @@
 
   <!-- Don't overwrite files on redirect -->
   <span data-toggle="modal" data-target="#noclobber"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Don't accidentally overwrite existing files">Don't overwrite files</button></span>
-  <div id="noclobber" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="noclobber-title">
+  <div id="noclobber" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="noclobber_title">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="noclobber-title" class="modal-title">Don't accidentally overwrite existing files</h3>
+          <h3 id="noclobber_title" class="modal-title">Don't accidentally overwrite existing files</h3>
         </div>
         <div class="modal-body">
           <p><code>set -o noclobber</code></p>
@@ -341,12 +341,12 @@
 
   <!-- Exit after any error -->
   <span data-toggle="modal" data-target="#exiterr"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Exit a script immediately if any command returns an error">Exit immediately after error</button></span>
-  <div id="exiterr" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exiterr-title">
+  <div id="exiterr" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exiterr_title">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="exiterr-title" class="modal-title">Exit a script immediately if any command returns an error</h3>
+          <h3 id="exiterr_title" class="modal-title">Exit a script immediately if any command returns an error</h3>
         </div>
         <div class="modal-body">
           <p><code>set -o errexit</code></p>
@@ -362,12 +362,12 @@
 
   <!-- Battle whitespace in filenames -->
   <span data-toggle="modal" data-target="#whitespacefile"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="One technique for handling whitespace in filenames">Handle whitespaces in filenames</button></span>
-  <div id="whitespacefile" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="whitespacefile-title">
+  <div id="whitespacefile" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="whitespacefile_title">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="whitespacefile-title" class="modal-title">One technique for handling whitespace in filenames</h3>
+          <h3 id="whitespacefile_title" class="modal-title">One technique for handling whitespace in filenames</h3>
         </div>
         <div class="modal-body">
           <p><code>IFS=$'\n'</code></p>
@@ -393,12 +393,12 @@
 <!-- sample example -->
 <!-- <span data-toggle="modal" data-target="#*****unique name*****"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="*****Hover-over description*****">*****Small title****</button></span>
 Change the above data-target field, the button text, and the below div class (the word after modal fade)
-<div id="*****unique name*****" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="*****unique name*****-title">
+<div id="*****unique name*****" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="*****unique name*****_title">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h3 id="*****unique name*****-title" class="modal-title">*****Longer title*****</h3>
+        <h3 id="*****unique name*****_title" class="modal-title">*****Longer title*****</h3>
       </div>
       <div class="modal-body">
         <p> <code>ffmpeg -i <i>input_file</i></code>  *****code goes here***** <i>output_file</i></p>
