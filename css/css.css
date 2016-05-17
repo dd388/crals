@@ -5,6 +5,16 @@ body {
   background-color: white;
   border-color: #C0C0C0;
 }
+.modal-content {
+  background-color: white;
+}
+.close {
+  color: #000000;
+}
+.close:hover, .close:focus {
+    color: #000000;
+    opacity: 1;
+}
 
 
 h1,h2,h3,h4,h5,h6 {
