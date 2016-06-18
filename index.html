@@ -313,8 +313,31 @@
     </div>
   </div>
   <!-- ends Count files and directories -->
-</div><!-- ends Find and intrepret files -->
+<!-- Compare two text files -->
+  <span data-toggle="modal" data-target="#compare_textfiles"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Compare two textfiles and display differences">Compare two textfiles</button></span>
+  <div id="compare_textfiles" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="compare_textfiles_title">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h3 id="count_files_title" class="modal-title">Compare two textfiles</h3>
+        </div>
+        <div class="modal-body">
+          <p><code>diff <i>input_file_1 </i> <i>input_file_2</i></code></p>
+          <p>This will compare two textfiles and show the differences, if any. </p>
+          <dl>
+            <dt>diff</dt><dd>starts the command, which compares your two text files</dd>
+            <dt><i>input_file_1</i></dt><dd>is the name of your first text file.</dd>
+            <dt><i>input_file_2</i></dt><dd>is the name of the file that you want to compare it to.</dd>
+          </dl>
+          <p class="link"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ends Compare two textfiles -->  
 
+</div><!-- ends Find and intrepret files -->
  <div class="well">
   <h4>Add helpful flags into bash shell scripts</h4>
 
