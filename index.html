@@ -158,20 +158,52 @@
           <h3 id="append_extension_title" class="modal-title">Append file extensions</h3>
         </div>
         <div class="modal-body">
-          <p><code>for files in *; do mv “$files” “$files.doc”; done</code></p>
+          <p><code>for files in *; do mv ${files} ${files}.doc; done</code></p>
           <p>Append the extension .doc to all files in a directory.</p>
           <p>This script, which uses a loop, deploys the move command to rename a directory of files with their current filename plus the extension .doc. This will be helpful when working with a folder of homogenous files of the same type that, for one reason or another, lack file extensions. The absence of file extensions is a very common pattern of documents from the mid to late 1990s. This script quickly solves the problem and can be executed directly from your Terminal window.</p>
           <dl>
             <dt>for files in *;</dt><dd>starts the loop</dd>
             <dt>do mv "$files" "$files.doc";</dt><dd>for each matched file in the directory, move it to a new file with the same name and .doc appended to it.</dd>
             <dt>done</dt><dd>ends the loop.</dd>
-          </dl>
+          </dl>          
           <p class="link"></p>
         </div>
       </div>
     </div>
   </div>
   <!-- ends Append file extensions -->
+
+  <!-- Rename WAV files based on pattern -->
+  <span data-toggle="modal" data-target="#rename_substitute"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Rename files by substitution">Rename files by substitution</button></span>
+  <div id="rename_substitute" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="rename_substitute_title">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h3 id="rename_substitute_title" class="modal-title">Rename WAV files by substitution</h3>
+        </div>
+        <div class="modal-body">
+          <p><code>for i in *.wav; do mv $i $(echo $i | sed 's/MAC/MN/g'); done</code></p>
+          <p>Rename WAV files in a directory by substituting the pattern MAC for MN.</p>
+          <dl>
+            <dd>This works within the full filename string, instead of only at the beginning or end. It uses "sed" to do this substitution work.</dd>
+            <dt>for i in *.wav;</dt><dd>starts the loop</dd>
+            <dt>do mv $i $(echo $i | sed 's/MAC/MN/g');</dt><dd>Performs the renaming.</dd>
+            <dt>$(echo $i | sed 's/MAC/MN/g')</dt><dd>You can nest commands by placing a line of bash inside the parentheses preceded by a dollar sign: $( ... )</dd>
+            <dt>$echo i | </d><dd>says to print out the value of the variable i</dd>
+            <dt>|</dt><dd>(pipe) indicates the output of the first command will be passed as input for the next command.</dd>
+            <dt>sed 's/MAC/MN/g'</dt><dd>sed is known as "stream editor." The text in single quotes tells sed what to do. The 's' tells sed that we want it to perform a substitution. The '/' (slash) characters serve as seprators between the old and new values that we want to find and replace. First we define the old value we want to replace. In this case, it is "MAC". Then we define the new value we want to substitute for the old value. In this case, it is "MN". The 'g' at the end of the command says we want to find/replace all occurences of this pattern, not just the first one.</dd>
+            <dt>done</dt><dd>ends the loop.</dd>
+          </dl>          
+          <p class="link"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ends Rename WAV files based on pattern -->
+
+
+
 
   </div> <!-- ends Copy, rename and create files -->
 
