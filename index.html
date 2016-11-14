@@ -396,7 +396,33 @@
   </div>
   <!-- ends List files and write out to external text file -->  
 
-
+  <!-- Disk usage -->
+  <span data-toggle="modal" data-target="#disk_usage"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Check disk usage">Disk usage</button></span>
+  <div id="disk_usage" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="find_zips_title">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h3 id="find_zips_title" class="modal-title">Checks disk usage for folder</h3>
+        </div>
+        <div class="modal-body">
+          <p><code>du -sch /set/your/path/here/*</code></p>
+          <p>This will give you disk usage information for all files in a chosen directory.</p>
+          <dl>
+            <dt>du</dt><dd>starts the command, which lists directory contents.</dd>
+            <dt>-sch</dt><dd>-sch is a series of flags. This could also be written out as <code>-s -c -h</code> instead. Each letter represents a different, chosen option for the command.<br/>
+            <code>-s</code> indicates that you want one entry per file.<br/>
+            <code>-c</code> indicates that you want to calculate the grand total.<br/>
+            <code>-h</code> indicates that you want these results in human-readable units.
+            </dd>
+            <dt>/set/your/path/here/*</dt><dd>Defines the file path you want to search. The asterisk at the end of this file path indicates that you want information about everything in the chosen directory.</dd>
+          </dl>
+          <p class="link"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ends Disk usage -->
 
 </div><!-- ends Find and intrepret files -->
  <div class="well">
