@@ -165,7 +165,7 @@
             <dt>for files in *;</dt><dd>starts the loop</dd>
             <dt>do mv "$files" "$files.doc";</dt><dd>for each matched file in the directory, move it to a new file with the same name and .doc appended to it.</dd>
             <dt>done</dt><dd>ends the loop.</dd>
-          </dl>          
+          </dl>
           <p class="link"></p>
         </div>
       </div>
@@ -194,14 +194,14 @@
             <dt>|</dt><dd>(pipe) indicates the output of the first command will be passed as input for the next command.</dd>
             <dt>sed 's/MAC/MN/g'</dt><dd>sed is known as "stream editor." The text in single quotes tells sed what to do. The 's' tells sed that we want it to perform a substitution. The '/' (slash) characters serve as seprators between the old and new values that we want to find and replace. First we define the old value we want to replace. In this case, it is "MAC". Then we define the new value we want to substitute for the old value. In this case, it is "MN". The 'g' at the end of the command says we want to find/replace all occurences of this pattern, not just the first one.</dd>
             <dt>done</dt><dd>ends the loop.</dd>
-          </dl>          
+          </dl>
           <p class="link"></p>
         </div>
       </div>
     </div>
   </div>
   <!-- ends Rename WAV files based on pattern -->
-  
+
   <!-- Find and rsync all excel files -->
   <span data-toggle="modal" data-target="#find_rsync"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Find and rsync all Excel files in subdirectories">Find and rsync all Excel files</button></span>
   <div id="find_rsync" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="find_rsync_title">
@@ -226,7 +226,7 @@
             <dt>{}</dt><dd>tells to use the file found by find as the source</dd>
             <dt><i>destination</i></dt><dd>is the directory where you want rsync to copy files into.</dd>
             <dt>\;</dt><dd>end the exec command</dd>
-          </dl>          
+          </dl>
           <p class="link"></p>
         </div>
       </div>
@@ -401,7 +401,7 @@
       </div>
     </div>
   </div>
-  <!-- ends Compare two textfiles -->  
+  <!-- ends Compare two textfiles -->
 
 <!-- List files and write out to external text file -->
   <span data-toggle="modal" data-target="#write_files_to_txt"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="List files/folders and write out to external text file">List files/folders and write out to external text file</button></span>
@@ -426,7 +426,7 @@
       </div>
     </div>
   </div>
-  <!-- ends List files and write out to external text file -->  
+  <!-- ends List files and write out to external text file -->
 
 
 
@@ -498,8 +498,54 @@
   <!-- ends Battle whitespace in filenames -->
 
 
+
 </div><!-- Ends helpful stuff in bash scripts -->
 
+<div class="well">
+ <h4>Moving around the command line</h4>
+
+  <!-- Move cursor to start of line -->
+  <span data-toggle="modal" data-target="#movetostart"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Move the cursor the beginning of the line">Move the cursor to the beginning of the line</button></span>
+  <div id="movetostart" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="movetostart_title">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h3 id="whitespacefile_title" class="modal-title">Moving the cursor to the beginning of the line</h3>
+        </div>
+        <div class="modal-body">
+          <p><code>ctrl+a</code></p>
+          <p>Sometimes when you're editing a command, the part you want to edit is buried at the beginning of the line. In that case, it can be faster to jump to the start of the line and move the cursor to the part you want to edit, instead of moving backwards from the end of the line.</p>
+          <p>On the keyboard, press the <code>control</code> key and the <code>a</code> at the same time, and the cursor will move to the start of line.</p>
+          <p>Your console might have other shortcuts for moving the cursor forward or backward one word at a time.</p>
+          <p class="link"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ends Move cursor to start of line -->
+
+  <!-- Move cursor to start of line -->
+  <span data-toggle="modal" data-target="#mousecursor"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Move the cursor using the mouse">Move the cursor using the mouse</button></span>
+  <div id="mousecursor" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mousecursor_title">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h3 id="whitespacefile_title" class="modal-title">Moving the cursor using the mouse</h3>
+        </div>
+        <div class="modal-body">
+          <p>On Mac or Linux, hold <code>alt/option</code> and click with the mouse</p>
+          <p>Sometimes when you're editing a command, it can be frustrating to move the cursor to the right position with the arrow keys. In that case, it can be faster to jump to the spot you want to edit directly.</p>
+          <p>On the keyboard, press the <code>alt/option</code> key and then click on the location where you want to place the cursor on the command line.</p>
+          <p class="link"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ends Move cursor to start of line -->
+
+</div><!-- Ends helpful stuff using terminal -->
 
 
 </div><!-- closes the big well -->
