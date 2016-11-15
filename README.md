@@ -9,6 +9,10 @@
 Created by Jarrett Drake and Dianne Dietrich.
 
 ## Credits and Thank You
+Nick Krabbenhoeft (for adding an rsync example and a section on moving around the command line)
+
+Ashley Blewer (for adding disk usage commands)
+
 Bertram Lyons (for adding commands)
 
 Kieran O'Leary (for adding commands and offering Windows shell guidance)
