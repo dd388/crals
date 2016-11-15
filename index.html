@@ -512,10 +512,13 @@
           <h3 id="whitespacefile_title" class="modal-title">One technique for handling whitespace in filenames</h3>
         </div>
         <div class="modal-body">
+          <p><code>OIFS=$IFS</code></p>
           <p><code>IFS=$'\n'</code></p>
+          <p><code>[script text]</code></p>
+          <p><code>IFS=$OIFS</code></p>
           <p>Set a flag so that bash only interprets new lines as delimiters. Use this if you find that, in your code, you are getting weird errors because certain filenames have spaces in them, and there's no other way around that. (i.e., If you're not allowed or don't want to rename files that have spaces in them.)</p>
-          <p>Add this line after <code>#!/bin/bash</code> and before the rest of your code starts.</p>
-          <p>You can also issue this command in a Terminal window, but know that its effects are not permanent. (Meaning that, if you open a new Terminal window, you'll have to issue the command again to get the same effect.)</p>
+          <p>Add the first two lines after <code>#!/bin/bash</code> and before the rest of your code starts.</p>
+          <p>At the end of the script, use the last line to re-set $IFS to its original value.</p>
           <p class="link"></p>
         </div>
       </div>
