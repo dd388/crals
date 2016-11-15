@@ -201,6 +201,38 @@
     </div>
   </div>
   <!-- ends Rename WAV files based on pattern -->
+  
+  <!-- Find and rsync all excel files -->
+  <span data-toggle="modal" data-target="#find_rsync"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Find and rsync all Excel files in subdirectories">Find and rsync all Excel files</button></span>
+  <div id="find_rsync" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="find_rsync_title">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h3 id="find_rsync_title" class="modal-title">Find and rsync all Excel files</h3>
+        </div>
+        <div class="modal-body">
+          <p><code>find <i>source</i> -iname "*.xlsx" -exec rsync {} <i>destination</i> \;</code></p>
+          <p>Find and rsync all excel files in any subdirectory from <i>source</i> to a single directory at <i>destination</i>.</p>
+          <p>This command can be used to quickly aggregate multiple files to a single place for analysis. For example, copying metadata files from the data/ directory of a large number of bags.</p>
+          <p>If files do not have unique names, they will be overwritten at <i>destination</i>.</p>
+          <dl>
+            <dt>find</dt><dd>starts the command, which is a file finding tool</dd>
+            <dt><i>source</i></dt><dd>is the parent directory where you want to look</dd>
+            <dt>-iname</dt><dd>match a case-insensitive filename pattern</dd>
+            <dt>"*.xlsx"</dt><dd>match any filename that is followed by a dot and xlsx</dd>
+            <dt>-exec</dt><dd>execute a command on each file found</dd>
+            <dt>rsync</dt><dd>tells rsync not to copy any temporary files (i.e., files that start with a tilde)</dd>
+            <dt>{}</dt><dd>tells to use the file found by find as the source</dd>
+            <dt><i>destination</i></dt><dd>is the directory where you want rsync to copy files into.</dd>
+            <dt>\;</dt><dd>end the exec command</dd>
+          </dl>          
+          <p class="link"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ends Find and rsync all excel files -->
 
 
 
