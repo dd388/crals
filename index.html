@@ -403,6 +403,31 @@
   </div>
   <!-- ends Compare two textfiles -->
 
+  <!-- Compare two binary streams -->
+    <span data-toggle="modal" data-target="#compare_binaries"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Compare two binary streams and display differences">Compare two binary streams</button></span>
+    <div id="compare_binaries" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="compare_binaries_title">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h3 id="compare_binaries_title" class="modal-title">Compare two binary streams</h3>
+          </div>
+          <div class="modal-body">
+            <p><code>cmp -l <i>input_file_1 </i> <i>input_file_2</i></code></p>
+            <p>This will compare two binary streams and show the address and bytes of each difference, if any. </p>
+            <dl>
+              <dt>cmp</dt><dd>starts the command, which compares your two files</dd>
+              <dt>-l</dt><dd>tells cmp to list all the differences.</dd>
+              <dt><i>input_file_1</i></dt><dd>is the name of your first file.</dd>
+              <dt><i>input_file_2</i></dt><dd>is the name of the file that you want to compare it to.</dd>
+            </dl>
+            <p class="link"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ends Compare two binaries -->
+
 <!-- List files and write out to external text file -->
   <span data-toggle="modal" data-target="#write_files_to_txt"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="List files/folders and write out to external text file">List files/folders and write out to external text file</button></span>
   <div id="write_files_to_txt" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="write_files_to_txt_title">
