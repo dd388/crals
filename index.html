@@ -666,6 +666,28 @@
   </div>
   <!-- ends Stop script -->
 
+  <!-- Really stop script -->
+  <span data-toggle="modal" data-target="#killscript"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Really stop a command">Don't just stop, kill a command</button></span>
+  <div id="killscript" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="killscript_title">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h3 id="whitespacefile_title" class="modal-title">Don't just stop, kill a command</h3>
+        </div>
+        <div class="modal-body">
+          <p><code>ctrl+z</code></p>
+          <p><code>kill %%</code></p>
+          <p>When you try to stop a command, but <a href="#killscript"></a><code>ctrl+c</code></a> doesn't work.</p>
+          <dt>ctrl+z</dt><dd>suspend the current command.</dd>
+          <dt>kill %%</dt><dd>stop the last suspended commanded, metaphorically yanking the power.</dd>
+          <p class="link"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ends Really stop script -->
+
 </div><!-- Ends helpful stuff using terminal -->
 
 
