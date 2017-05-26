@@ -599,7 +599,7 @@
 </div><!-- Ends helpful stuff in bash scripts -->
 
 <div class="well">
- <h4>Move around on the command line</h4>
+ <h4>Increase control on the command line</h4>
 
   <!-- Move cursor to start of line -->
   <span data-toggle="modal" data-target="#movetostart"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Move the cursor the beginning of the line">Move the cursor to the beginning of the line</button></span>
@@ -622,7 +622,7 @@
   </div>
   <!-- ends Move cursor to start of line -->
 
-  <!-- Move cursor to start of line -->
+  <!-- Move cursor with mouse -->
   <span data-toggle="modal" data-target="#mousecursor"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Move the cursor using the mouse">Move the cursor using the mouse</button></span>
   <div id="mousecursor" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mousecursor_title">
     <div class="modal-dialog modal-lg">
@@ -640,7 +640,31 @@
       </div>
     </div>
   </div>
-  <!-- ends Move cursor to start of line -->
+  <!-- ends Move cursor with mouse -->
+
+  <!-- Move cursor with mouse -->
+  <span data-toggle="modal" data-target="#stopscript"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Stop a command">Stop a command</button></span>
+  <div id="stopscript" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="stopscript_title">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h3 id="whitespacefile_title" class="modal-title">Stop a command while it's running</h3>
+        </div>
+        <div class="modal-body">
+          <p><code>ctrl+c</code></p>
+          <p>When:<ul>
+            <li>a command is running, and it won't stop,</li>
+            <li>the wrong command is running, and you need to stop it,</li>
+            <li>the command has a bug, and you need to stop it,</li>
+          </ul>press <code>ctrl+c</code> on the keyboard.</p>
+          <p>If one press doesn't work, try holding <code>ctrl</code> and tapping <code>c</code>.</p>
+          <p class="link"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ends Move cursor with mouse -->
 
 </div><!-- Ends helpful stuff using terminal -->
 
