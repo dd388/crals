@@ -428,6 +428,49 @@
     </div>
     <!-- ends Compare two binaries -->
 
+<!-- Percentage difference -->
+  <span data-toggle="modal" data-target="#percent_different"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Compare two binary streams and display differences">Calculate difference between two binary streams</button></span>
+  <div id="percent_different" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="percent_different_title">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h3 id="percent_different_title" class="modal-title">Calculate the percentage of difference between two bytestreams</h3>
+        </div>
+        <div class="modal-body">
+          <p><code>echo "100 * $(cmp -l <i>input_file_1</i> <i>input_file_2</i> | wc -l)/$(wc -c <i>input_file_2</i> | cut -d' ' -f4)" | bc -l</code></p>
+          <p>This will compare two binary streams and show the address and bytes of each difference, if any.</p>
+          <p>For example, if two disk images of the same item have different checksums this will indicate how different they are.</p>
+          <p>Or, if you suspect that an operation has corrupted a bitstream, this will indicate the amount of corruption.</p>
+          <p>There's a lot going on here, but if you'd like to adapt the command, the gist of it is:</p>
+          <p><code>echo "100 * $(commands to find number of different bytes)/$(commands to find total number of bytes)" | bc -l</code></p>
+          <dl>
+            <dt>echo</dt><dd>in order to eventually pipe the fraction to bc, we need to wrap everything in an echo command.</dd>
+            <dt>"..."</dt><dd>tell echo what information to echo</dd>
+            <dt>100 *</dt><dd>multiply by 100 to format the percentage correctly</dd>
+            <dt>$(...)</dt><dd>evaluate everything inside of the parentheses</dd>
+            <dt>cmp</dt><dd>starts the command, which compares your two files</dd>
+            <dt>-l</dt><dd>tell cmp to list all the differences.</dd>
+            <dt><i>input_file_1</i></dt><dd>is the name of your first file.</dd>
+            <dt><i>input_file_2</i></dt><dd>is the name of the file that you want to compare it to.</dd>
+            <dt>wc</dt><dd>start the word count command, to summarize the differences found with cmp.</dd>
+            <dt>-l</dt><dd>tell wc to count by line, since cmp listed differences by line.</dd>
+            <dt>/</dt><dd>integer division. For decimal division, the result is piped to bc eventually.</dd>
+            <dt>wc</dt><dd>start the word count command, to find the byte size of the comparison file.</dd>
+            <dt>-c</dt><dd>tell wc to count by byte.</dd>
+            <dt>cut</dt><dd>start the cut command to slice the needed information out of the results of wc -c.</dd>
+            <dt>-d' '</dt><dd>specify that ' ' characters are delimiting the fields in the string.</dd>
+            <dt>-f4</dt><dd>specify that the information needed is in the fourth field.</dd>
+            <dt>bc</dt><dd>start the precision math command, in order to get the decimal result</dd>
+            <dt>-l</dt><dd>tell bc to use the standard math library</dd>
+          </dl>
+          <p class="link"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- ends percentage difference -->
+
 <!-- List files and write out to external text file -->
   <span data-toggle="modal" data-target="#write_files_to_txt"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="List files/folders and write out to external text file">List files/folders and write out to external text file</button></span>
   <div id="write_files_to_txt" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="write_files_to_txt_title">
