@@ -403,33 +403,33 @@
   </div>
   <!-- ends Compare two textfiles -->
 
-  <!-- Compare two binary streams -->
-    <span data-toggle="modal" data-target="#compare_binaries"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Compare two binary streams and display differences">Compare two binary streams</button></span>
-    <div id="compare_binaries" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="compare_binaries_title">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h3 id="compare_binaries_title" class="modal-title">Compare two binary streams</h3>
-          </div>
-          <div class="modal-body">
-            <p><code>cmp -l <i>input_file_1 </i> <i>input_file_2</i></code></p>
-            <p>This will compare two binary streams and show the address and bytes of each difference, if any. </p>
-            <dl>
-              <dt>cmp</dt><dd>starts the command, which compares your two files</dd>
-              <dt>-l</dt><dd>tells cmp to list all the differences.</dd>
-              <dt><i>input_file_1</i></dt><dd>is the name of your first file.</dd>
-              <dt><i>input_file_2</i></dt><dd>is the name of the file that you want to compare it to.</dd>
-            </dl>
-            <p class="link"></p>
-          </div>
+<!-- Compare two binary streams -->
+  <span data-toggle="modal" data-target="#compare_binaries"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Compare two binary streams and display differences">Compare two binary streams</button></span>
+  <div id="compare_binaries" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="compare_binaries_title">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h3 id="compare_binaries_title" class="modal-title">Compare two binary streams</h3>
+        </div>
+        <div class="modal-body">
+          <p><code>cmp -l <i>input_file_1 </i> <i>input_file_2</i></code></p>
+          <p>This will compare two binary streams and show the address and bytes of each difference, if any. </p>
+          <dl>
+            <dt>cmp</dt><dd>starts the command, which compares your two files</dd>
+            <dt>-l</dt><dd>tells cmp to list all the differences.</dd>
+            <dt><i>input_file_1</i></dt><dd>is the name of your first file.</dd>
+            <dt><i>input_file_2</i></dt><dd>is the name of the file that you want to compare it to.</dd>
+          </dl>
+          <p class="link"></p>
         </div>
       </div>
     </div>
-    <!-- ends Compare two binaries -->
+  </div>
+<!-- ends Compare two binaries -->
 
 <!-- Percentage difference -->
-  <span data-toggle="modal" data-target="#percent_different"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Compare two binary streams and display differences">Calculate difference between two binary streams</button></span>
+  <span data-toggle="modal" data-target="#percent_different"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Calculate difference between two binary streams">Calculate difference between two binary streams</button></span>
   <div id="percent_different" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="percent_different_title">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -599,7 +599,7 @@
 </div><!-- Ends helpful stuff in bash scripts -->
 
 <div class="well">
- <h4>Move around on the command line</h4>
+ <h4>Increase control on the command line</h4>
 
   <!-- Move cursor to start of line -->
   <span data-toggle="modal" data-target="#movetostart"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Move the cursor the beginning of the line">Move the cursor to the beginning of the line</button></span>
@@ -622,7 +622,7 @@
   </div>
   <!-- ends Move cursor to start of line -->
 
-  <!-- Move cursor to start of line -->
+  <!-- Move cursor with mouse -->
   <span data-toggle="modal" data-target="#mousecursor"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Move the cursor using the mouse">Move the cursor using the mouse</button></span>
   <div id="mousecursor" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mousecursor_title">
     <div class="modal-dialog modal-lg">
@@ -640,7 +640,53 @@
       </div>
     </div>
   </div>
-  <!-- ends Move cursor to start of line -->
+  <!-- ends Move cursor with mouse -->
+
+  <!-- Stop script -->
+  <span data-toggle="modal" data-target="#stopscript"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Stop a command">Stop a command</button></span>
+  <div id="stopscript" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="stopscript_title">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h3 id="whitespacefile_title" class="modal-title">Stop a command while it's running</h3>
+        </div>
+        <div class="modal-body">
+          <p><code>ctrl+c</code></p>
+          <p>When:<ul>
+            <li>a command is running, and it won't stop,</li>
+            <li>the wrong command is running, and you need to stop it,</li>
+            <li>the command has a bug, and you need to stop it,</li>
+          </ul>press <code>ctrl+c</code> on the keyboard.</p>
+          <p>If one press doesn't work, try holding <code>ctrl</code> and tapping <code>c</code>.</p>
+          <p class="link"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ends Stop script -->
+
+  <!-- Really stop script -->
+  <span data-toggle="modal" data-target="#killscript"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Really stop a command">Don't just stop, kill a command</button></span>
+  <div id="killscript" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="killscript_title">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h3 id="whitespacefile_title" class="modal-title">Don't just stop, kill a command</h3>
+        </div>
+        <div class="modal-body">
+          <p><code>ctrl+z</code></p>
+          <p><code>kill %%</code></p>
+          <p>When you try to stop a command, but <a href="#killscript"></a><code>ctrl+c</code></a> doesn't work.</p>
+          <dt>ctrl+z</dt><dd>suspend the current command.</dd>
+          <dt>kill %%</dt><dd>stop the last suspended commanded, metaphorically yanking the power.</dd>
+          <p class="link"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ends Really stop script -->
 
 </div><!-- Ends helpful stuff using terminal -->
 
