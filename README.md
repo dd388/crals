@@ -8,6 +8,22 @@
  
 Created by Jarrett Drake and Dianne Dietrich.
 
+## How do I contribute?
+
+You are welcome to edit the codebase yourself, or just supply the information and ask it to be added to the site.
+
+#### Edit codebase
+
+To contribute to this project directly (and more quickly), clone this repository and create a new branch (`git checkout -b your-branch-name`) and add or modify a new block in `index.html`. Then [submit a pull request](https://github.com/dd388/crals/pulls) and the maintainers will review and integrate your code. There is a commented-out sample block available at the bottom of `index.html` that can be as a guideline for your command.
+
+#### Make a request
+
+If you are having trouble with coding it yourself or with github, feel free to [submit an issue](https://github.com/dd388/crals/issues) with the kind of command you would like to see added to the site.
+
+#### General help
+
+If you want to help but don't have a new script to add, you can help us by testing out the scripts available, by refining or clarifying the documentation, or [creating an issue](https://github.com/dd388/crals/issues) for anything that sounds confusing and requires clarification.
+
 ## Credits and Thank You
 Nick Krabbenhoeft (for adding an rsync example and a section on moving around the command line)
 
