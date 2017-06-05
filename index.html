@@ -688,6 +688,37 @@
   </div>
   <!-- ends Really stop script -->
 
+  <!-- Stop script -->
+  <span data-toggle="modal" data-target="#morehistory"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Save more commands in your history">Save more commands in your history</button></span>
+  <div id="morehistory" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="morehistory_title">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h3 id="whitespacefile_title" class="modal-title">Save more commands in your history</h3>
+        </div>
+        <div class="modal-body">
+          <p>The terminal saves the commands that you enter into a history file. When you press <code>up</code>, the terminal retrieves lines from this history file one-by-one. It can be helpful to save more than the default number of commands. To do that you need to increase the storage of the history cache and history file.</p>
+          <p><code>echo "export $HISTSIZE=5000" >> ~/.bash_profile</code></p>
+          <dl>
+            <dt>echo ""</dt><dd>starts the command, which repeats what is inside the quotes as an argument for another command.<dd>
+            <dt>export</dt><dd>is a command that makes a variable available to all programs in your terminal.</dd>
+            <dt>$HISTSIZE=</dt><dd>is the variable used by bash to control how many lines are stored in the history cache.</dd>
+            <dt>5000</dt><dd>how many lines you would like to store. Using -1 sets the storage to unlimited.</dd>
+            <dt>>></dt><dd>appends the output of the previous command to the end of a file.</dd>
+            <dt>~/.bash_profile</dt><dd>is the file used to store configuration options.</dd>
+          </dl>
+          <p><code>echo "export $HISTFILESIZE=5000" >> ~/.bash_profile</code></p>
+          <dl>
+            <dt>$HISTFILESIZE=</dt><dd>is the variable used by bash to control how many lines are stored in the history file.</dd>
+          </dl>
+          <p class="link"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ends Stop script -->
+
 </div><!-- Ends helpful stuff using terminal -->
 
 
