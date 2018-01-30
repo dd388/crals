@@ -719,6 +719,30 @@
   </div>
   <!-- ends Increase bash history -->
 
+  <!-- Search bash history -->
+  <span data-toggle="modal" data-target="#searchhistory"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Find an old command">Find an old command</button></span>
+  <div id="searchhistory" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="searchhistory_title">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h3 id="searchhistory_title" class="modal-title">Find an old command</h3>
+        </div>
+        <div class="modal-body">
+          <p>Remember that super-long, super-complicated, super-great bash command you used once? Want to use it again but don't want to search your commands one <code>up</code> press at a time? This command searches your saved command history using grep.</p>
+          <p><code>history | grep "<i>search_term</i>"</code></p>
+          <dl>
+            <dt>history</dt><dd>prints a log of your bash commands up to limit set by $HISTSIZE.<dd>
+            <dt>grep</dt><dd>searches text using patterns known as regular expressions.</dd>
+            <dt>"<i>search_term</i>"</dt><dd>the pattern grep looks for. Using numbers, letters, and spaces will do a regular search. Some punctuation characters kick off special functions. For example, <code>.<code> is a wildcard character.</dd>
+          </dl>
+          <p class="link"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ends Increase bash history -->
+
 </div><!-- Ends helpful stuff using terminal -->
 
 
