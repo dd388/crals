@@ -49,719 +49,719 @@
           <h3 id="copy_jpgs_title" class="modal-title">Copy JPGs</h3>
         </div>
         <div class="modal-body">
-          <p><code>cp -a -i -v *.jpg <i>destination</i></code></p>
-          <p>Copy all jpg files into another directory and preserve timestamps.</p>
-          <dl>
-            <dt>cp</dt><dd>starts the command, which copies files and directories.</dd>
-            <dt>-a</dt><dd>preserves timestamp information for copied files.</dd>
-            <dt>-i</dt><dd>will prompt when a file with the same name already exists in the <i>destination</i> directory. (You can ignore this if you don't need or want prompting; alternatively you can use -n if you want copy to <i>never</i> overwrite a file with the same name in the <i>destination</i>.</dd>
-            <dt>-v</dt><dd>prints out all files successfully copied. (You can ignore this if you don't need the feedback.)</dd>
-            <dt><i>destination</i></dt><dd>is the directory where you want the files copied to.</dd>
-          </dl>
-          <p class="link"></p>
+              <p><code>cp -a -i -v *.jpg <i>destination</i></code></p>
+              <p>Copy all jpg files into another directory and preserve timestamps.</p>
+              <dl>
+                <dt>cp</dt><dd>starts the command, which copies files and directories.</dd>
+                <dt>-a</dt><dd>preserves timestamp information for copied files.</dd>
+                <dt>-i</dt><dd>will prompt when a file with the same name already exists in the <i>destination</i> directory. (You can ignore this if you don't need or want prompting; alternatively you can use -n if you want copy to <i>never</i> overwrite a file with the same name in the <i>destination</i>.</dd>
+                <dt>-v</dt><dd>prints out all files successfully copied. (You can ignore this if you don't need the feedback.)</dd>
+                <dt><i>destination</i></dt><dd>is the directory where you want the files copied to.</dd>
+              </dl>
+              <p class="link"></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- Ends Copy JPGs -->
+      <!-- Ends Copy JPGs -->
 
-  <!-- Rename files -->
-  <span data-toggle="modal" data-target="#rename_files"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Remove whitespace from file names and replace them with underscores">Remove spaces from file names</button></span>
-  <div id="rename_files" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="rename_files_title">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="rename_files_title" class="modal-title">Remove spaces from file names</h3>
-        </div>
-        <div class="modal-body">
-          <p><code>rename -n -v "s/\s+/_g" *</code></p>
-          <p>This command will test a batch replacement of all whitespace characters in a filename with underscores.</p>
-          <dl>
-            <dt>rename</dt><dd>starts the command, which renames multiple files.</dd>
-            <dt>-n</dt><dd>tells rename to only print the names of files to be renamed, but doesn't actually rename anything. (When you’re ready to batch rename, reissue the command without -n.)</dd>
-            <dt>-v</dt><dd>tells rename to print out the names of the files that will be successfully renamed. (You can leave this out if you don’t need confirmation.)</dd>
-            <dt>"s/\s+/_g"</dt><dd>is a regular expression that says to replace all whitespace characters (e.g., space, tab, newline) with an underscore.</dd>
-          </dl>
-          <p class="link"></p>
+      <!-- Rename files -->
+      <span data-toggle="modal" data-target="#rename_files"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Remove whitespace from file names and replace them with underscores">Remove spaces from file names</button></span>
+      <div id="rename_files" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="rename_files_title">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="rename_files_title" class="modal-title">Remove spaces from file names</h3>
+            </div>
+            <div class="modal-body">
+              <p><code>rename -n -v "s/\s+/_g" *</code></p>
+              <p>This command will test a batch replacement of all whitespace characters in a filename with underscores.</p>
+              <dl>
+                <dt>rename</dt><dd>starts the command, which renames multiple files.</dd>
+                <dt>-n</dt><dd>tells rename to only print the names of files to be renamed, but doesn't actually rename anything. (When you’re ready to batch rename, reissue the command without -n.)</dd>
+                <dt>-v</dt><dd>tells rename to print out the names of the files that will be successfully renamed. (You can leave this out if you don’t need confirmation.)</dd>
+                <dt>"s/\s+/_g"</dt><dd>is a regular expression that says to replace all whitespace characters (e.g., space, tab, newline) with an underscore.</dd>
+              </dl>
+              <p class="link"></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- ends Rename files -->
+      <!-- ends Rename files -->
 
-  <!-- Create multiple directories -->
-  <span data-toggle="modal" data-target="#create_dirs"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Create multiple directories following a template">Create multiple directories</button></span>
-  <div id="create_dirs" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="create_dirs_title">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="create_dirs_title" class="modal-title">Create multiple directories</h3>
-        </div>
-        <div class="modal-body">
-          <p><code>mkdir -p -v disk{001..100}/{rawFiles,normalizedFiles,reports}</code></p>
-          <p>This command makes one hundred sequentially named directories with a common prefix, and create three subdirectories (named rawFiles, normalizedFiles, and reports) underneath each parent directory.</p>
-          <dl>
-            <dt>mkdir</dt><dd>starts the command, which makes directories.</dd>
-            <dt>-p</dt><dd>tells mkdir to create parent directories when they do not already exist.</dd>
-            <dt>-v</dt><dd>tells mkdir to print a message for each new directory created.</dd>
-            <dt>disk</dt><dd>prepends the literal string "disk".</dd>
-            <dt>{001..100}</dt><dd> prints out every number in the range from 1 to 100, right padding with zeros so each number has three digits.</dd>
-            <dt>/</dt><dd>is the path delimiter and separates a parent and child directory.</dd>
-            <dt>{rawFiles,normalizedFiles,reports}</dt><dd>prints out each string -- rawFiles, normalizedFiles, reports -- one at a time.</dd>
-          </dl>
-          <p class="link"></p>
+      <!-- Create multiple directories -->
+      <span data-toggle="modal" data-target="#create_dirs"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Create multiple directories following a template">Create multiple directories</button></span>
+      <div id="create_dirs" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="create_dirs_title">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="create_dirs_title" class="modal-title">Create multiple directories</h3>
+            </div>
+            <div class="modal-body">
+              <p><code>mkdir -p -v disk{001..100}/{rawFiles,normalizedFiles,reports}</code></p>
+              <p>This command makes one hundred sequentially named directories with a common prefix, and create three subdirectories (named rawFiles, normalizedFiles, and reports) underneath each parent directory.</p>
+              <dl>
+                <dt>mkdir</dt><dd>starts the command, which makes directories.</dd>
+                <dt>-p</dt><dd>tells mkdir to create parent directories when they do not already exist.</dd>
+                <dt>-v</dt><dd>tells mkdir to print a message for each new directory created.</dd>
+                <dt>disk</dt><dd>prepends the literal string "disk".</dd>
+                <dt>{001..100}</dt><dd> prints out every number in the range from 1 to 100, right padding with zeros so each number has three digits.</dd>
+                <dt>/</dt><dd>is the path delimiter and separates a parent and child directory.</dd>
+                <dt>{rawFiles,normalizedFiles,reports}</dt><dd>prints out each string -- rawFiles, normalizedFiles, reports -- one at a time.</dd>
+              </dl>
+              <p class="link"></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- ends Create multiple directories -->
+      <!-- ends Create multiple directories -->
 
-  <!-- Use rsync -->
-  <span data-toggle="modal" data-target="#rsync"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Use rsync to synchronize files across directories">Use rsync</button></span>
-  <div id="rsync" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="rsync_title">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="rsync_title" class="modal-title">Use rsync</h3>
-        </div>
-        <div class="modal-body">
-          <p><code> rsync -a -h --progress --stats --exclude=".*" --exclude="~*" --log-file=log_file <i>source</i> <i>destination</i></code></p>
-          <p>This command will recursively synchronize select files from one directory to another. (Note: rsync is generally used when you are copying data off of one storage medium to another, such as from your workstation to an external hard drive.)</p>
-          <dl>
-            <dt>rsync</dt><dd>starts the command, which is a file-copying tool.</dd>
-            <dt>-a</dt><dd>preserves timestamp information</dd>
-            <dt>-h</dt><dd>prints out file size information in a human readable format. (You can omit this if you’re a robot.)</dd>
-            <dt>--progress</dt><dd>prints out a graphical progress bar while rsync is copying files</dd>
-            <dt>--exclude=".*"</dt><dd>tells rsync not to copy any hidden files (i.e., files that start with a dot)</dd>
-            <dt>--exclude="~*"</dt><dd> tells rsync not to copy any temporary files (i.e., files that start with a tilde)</dd>
-            <dt>--log-file=<i>log_file</i></dt>tells rsync to place a log in the file named <i>log_file</i></dd>
-            <dt><i>source</i></dt><dd>is where you want rsync to copy from</dd>
-            <dt><i>destination</i></dt><dd>is the directory where you want rsync to copy files into.</dd>
-          </dl>
-          <p class="link"></p>
+      <!-- Use rsync -->
+      <span data-toggle="modal" data-target="#rsync"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Use rsync to synchronize files across directories">Use rsync</button></span>
+      <div id="rsync" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="rsync_title">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="rsync_title" class="modal-title">Use rsync</h3>
+            </div>
+            <div class="modal-body">
+              <p><code> rsync -a -h --progress --stats --exclude=".*" --exclude="~*" --log-file=log_file <i>source</i> <i>destination</i></code></p>
+              <p>This command will recursively synchronize select files from one directory to another. (Note: rsync is generally used when you are copying data off of one storage medium to another, such as from your workstation to an external hard drive.)</p>
+              <dl>
+                <dt>rsync</dt><dd>starts the command, which is a file-copying tool.</dd>
+                <dt>-a</dt><dd>preserves timestamp information</dd>
+                <dt>-h</dt><dd>prints out file size information in a human readable format. (You can omit this if you’re a robot.)</dd>
+                <dt>--progress</dt><dd>prints out a graphical progress bar while rsync is copying files</dd>
+                <dt>--exclude=".*"</dt><dd>tells rsync not to copy any hidden files (i.e., files that start with a dot)</dd>
+                <dt>--exclude="~*"</dt><dd> tells rsync not to copy any temporary files (i.e., files that start with a tilde)</dd>
+                <dt>--log-file=<i>log_file</i></dt>tells rsync to place a log in the file named <i>log_file</i></dd>
+                <dt><i>source</i></dt><dd>is where you want rsync to copy from</dd>
+                <dt><i>destination</i></dt><dd>is the directory where you want rsync to copy files into.</dd>
+              </dl>
+              <p class="link"></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- ends Use rsync -->
+      <!-- ends Use rsync -->
 
-  <!-- Append file extensions -->
-  <span data-toggle="modal" data-target="#append_extension"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Append file extensions to every file in a directory">Append file extensions</button></span>
-  <div id="append_extension" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="append_extension_title">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="append_extension_title" class="modal-title">Append file extensions</h3>
-        </div>
-        <div class="modal-body">
-          <p><code>for files in *; do mv ${files} ${files}.doc; done</code></p>
-          <p>Append the extension .doc to all files in a directory.</p>
-          <p>This script, which uses a loop, deploys the move command to rename a directory of files with their current filename plus the extension .doc. This will be helpful when working with a folder of homogenous files of the same type that, for one reason or another, lack file extensions. The absence of file extensions is a very common pattern of documents from the mid to late 1990s. This script quickly solves the problem and can be executed directly from your Terminal window.</p>
-          <dl>
-            <dt>for files in *;</dt><dd>starts the loop</dd>
-            <dt>do mv "$files" "$files.doc";</dt><dd>for each matched file in the directory, move it to a new file with the same name and .doc appended to it.</dd>
-            <dt>done</dt><dd>ends the loop.</dd>
-          </dl>
-          <p class="link"></p>
+      <!-- Append file extensions -->
+      <span data-toggle="modal" data-target="#append_extension"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Append file extensions to every file in a directory">Append file extensions</button></span>
+      <div id="append_extension" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="append_extension_title">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="append_extension_title" class="modal-title">Append file extensions</h3>
+            </div>
+            <div class="modal-body">
+              <p><code>for files in *; do mv ${files} ${files}.doc; done</code></p>
+              <p>Append the extension .doc to all files in a directory.</p>
+              <p>This script, which uses a loop, deploys the move command to rename a directory of files with their current filename plus the extension .doc. This will be helpful when working with a folder of homogenous files of the same type that, for one reason or another, lack file extensions. The absence of file extensions is a very common pattern of documents from the mid to late 1990s. This script quickly solves the problem and can be executed directly from your Terminal window.</p>
+              <dl>
+                <dt>for files in *;</dt><dd>starts the loop</dd>
+                <dt>do mv "$files" "$files.doc";</dt><dd>for each matched file in the directory, move it to a new file with the same name and .doc appended to it.</dd>
+                <dt>done</dt><dd>ends the loop.</dd>
+              </dl>
+              <p class="link"></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- ends Append file extensions -->
+      <!-- ends Append file extensions -->
 
-  <!-- Rename WAV files based on pattern -->
-  <span data-toggle="modal" data-target="#rename_substitute"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Rename files by substitution">Rename files by substitution</button></span>
-  <div id="rename_substitute" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="rename_substitute_title">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="rename_substitute_title" class="modal-title">Rename WAV files by substitution</h3>
-        </div>
-        <div class="modal-body">
-          <p><code>for i in *.wav; do mv $i $(echo $i | sed 's/MAC/MN/g'); done</code></p>
-          <p>Rename WAV files in a directory by substituting the pattern MAC for MN.</p>
-          <dl>
-            <dd>This works within the full filename string, instead of only at the beginning or end. It uses "sed" to do this substitution work.</dd>
-            <dt>for i in *.wav;</dt><dd>starts the loop</dd>
-            <dt>do mv $i $(echo $i | sed 's/MAC/MN/g');</dt><dd>Performs the renaming.</dd>
-            <dt>$(echo $i | sed 's/MAC/MN/g')</dt><dd>You can nest commands by placing a line of bash inside the parentheses preceded by a dollar sign: $( ... )</dd>
-            <dt>$echo i | </d><dd>says to print out the value of the variable i</dd>
-            <dt>|</dt><dd>(pipe) indicates the output of the first command will be passed as input for the next command.</dd>
-            <dt>sed 's/MAC/MN/g'</dt><dd>sed is known as "stream editor." The text in single quotes tells sed what to do. The 's' tells sed that we want it to perform a substitution. The '/' (slash) characters serve as seprators between the old and new values that we want to find and replace. First we define the old value we want to replace. In this case, it is "MAC". Then we define the new value we want to substitute for the old value. In this case, it is "MN". The 'g' at the end of the command says we want to find/replace all occurences of this pattern, not just the first one.</dd>
-            <dt>done</dt><dd>ends the loop.</dd>
-          </dl>
-          <p class="link"></p>
+      <!-- Rename WAV files based on pattern -->
+      <span data-toggle="modal" data-target="#rename_substitute"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Rename files by substitution">Rename files by substitution</button></span>
+      <div id="rename_substitute" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="rename_substitute_title">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="rename_substitute_title" class="modal-title">Rename WAV files by substitution</h3>
+            </div>
+            <div class="modal-body">
+              <p><code>for i in *.wav; do mv $i $(echo $i | sed 's/MAC/MN/g'); done</code></p>
+              <p>Rename WAV files in a directory by substituting the pattern MAC for MN.</p>
+              <dl>
+                <dd>This works within the full filename string, instead of only at the beginning or end. It uses "sed" to do this substitution work.</dd>
+                <dt>for i in *.wav;</dt><dd>starts the loop</dd>
+                <dt>do mv $i $(echo $i | sed 's/MAC/MN/g');</dt><dd>Performs the renaming.</dd>
+                <dt>$(echo $i | sed 's/MAC/MN/g')</dt><dd>You can nest commands by placing a line of bash inside the parentheses preceded by a dollar sign: $( ... )</dd>
+                <dt>$echo i | </d><dd>says to print out the value of the variable i</dd>
+                <dt>|</dt><dd>(pipe) indicates the output of the first command will be passed as input for the next command.</dd>
+                <dt>sed 's/MAC/MN/g'</dt><dd>sed is known as "stream editor." The text in single quotes tells sed what to do. The 's' tells sed that we want it to perform a substitution. The '/' (slash) characters serve as seprators between the old and new values that we want to find and replace. First we define the old value we want to replace. In this case, it is "MAC". Then we define the new value we want to substitute for the old value. In this case, it is "MN". The 'g' at the end of the command says we want to find/replace all occurences of this pattern, not just the first one.</dd>
+                <dt>done</dt><dd>ends the loop.</dd>
+              </dl>
+              <p class="link"></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- ends Rename WAV files based on pattern -->
+      <!-- ends Rename WAV files based on pattern -->
 
-  <!-- Find and rsync all excel files -->
-  <span data-toggle="modal" data-target="#find_rsync"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Find and rsync all Excel files in subdirectories">Find and rsync all Excel files</button></span>
-  <div id="find_rsync" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="find_rsync_title">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="find_rsync_title" class="modal-title">Find and rsync all Excel files</h3>
-        </div>
-        <div class="modal-body">
-          <p><code>find <i>source</i> -iname "*.xlsx" -exec rsync {} <i>destination</i> \;</code></p>
-          <p>Find and rsync all excel files in any subdirectory from <i>source</i> to a single directory at <i>destination</i>.</p>
-          <p>This command can be used to quickly aggregate multiple files to a single place for analysis. For example, copying metadata files from the data/ directory of a large number of bags.</p>
-          <p>If files do not have unique names, they will be overwritten at <i>destination</i>.</p>
-          <dl>
-            <dt>find</dt><dd>starts the command, which is a file finding tool</dd>
-            <dt><i>source</i></dt><dd>is the parent directory where you want to look</dd>
-            <dt>-iname</dt><dd>match a case-insensitive filename pattern</dd>
-            <dt>"*.xlsx"</dt><dd>match any filename that is followed by a dot and xlsx</dd>
-            <dt>-exec</dt><dd>execute a command on each file found</dd>
-            <dt>rsync</dt><dd>tells rsync not to copy any temporary files (i.e., files that start with a tilde)</dd>
-            <dt>{}</dt><dd>tells to use the file found by find as the source</dd>
-            <dt><i>destination</i></dt><dd>is the directory where you want rsync to copy files into.</dd>
-            <dt>\;</dt><dd>end the exec command</dd>
-          </dl>
-          <p class="link"></p>
+      <!-- Find and rsync all excel files -->
+      <span data-toggle="modal" data-target="#find_rsync"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Find and rsync all Excel files in subdirectories">Find and rsync all Excel files</button></span>
+      <div id="find_rsync" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="find_rsync_title">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="find_rsync_title" class="modal-title">Find and rsync all Excel files</h3>
+            </div>
+            <div class="modal-body">
+              <p><code>find <i>source</i> -iname "*.xlsx" -exec rsync {} <i>destination</i> \;</code></p>
+              <p>Find and rsync all excel files in any subdirectory from <i>source</i> to a single directory at <i>destination</i>.</p>
+              <p>This command can be used to quickly aggregate multiple files to a single place for analysis. For example, copying metadata files from the data/ directory of a large number of bags.</p>
+              <p>If files do not have unique names, they will be overwritten at <i>destination</i>.</p>
+              <dl>
+                <dt>find</dt><dd>starts the command, which is a file finding tool</dd>
+                <dt><i>source</i></dt><dd>is the parent directory where you want to look</dd>
+                <dt>-iname</dt><dd>match a case-insensitive filename pattern</dd>
+                <dt>"*.xlsx"</dt><dd>match any filename that is followed by a dot and xlsx</dd>
+                <dt>-exec</dt><dd>execute a command on each file found</dd>
+                <dt>rsync</dt><dd>tells rsync not to copy any temporary files (i.e., files that start with a tilde)</dd>
+                <dt>{}</dt><dd>tells to use the file found by find as the source</dd>
+                <dt><i>destination</i></dt><dd>is the directory where you want rsync to copy files into.</dd>
+                <dt>\;</dt><dd>end the exec command</dd>
+              </dl>
+              <p class="link"></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- ends Find and rsync all excel files -->
+      <!-- ends Find and rsync all excel files -->
 
 
 
 
-  </div> <!-- ends Copy, rename and create files -->
+      </div> <!-- ends Copy, rename and create files -->
 
-  <div class="well">
-  <h4>Find and interpret files</h4>
+      <div class="well">
+      <h4>Find and interpret files</h4>
 
-  <!-- Find all zips -->
-  <span data-toggle="modal" data-target="#find_zips"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Find all ZIP files in a directory">Find all ZIPs</button></span>
-  <div id="find_zips" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="find_zips_title">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="find_zips_title" class="modal-title">Find all ZIP files in a directory</h3>
-        </div>
-        <div class="modal-body">
-          <p><code>ls *.zip</code></p>
-          <p>This will find all of the .zip files in a particular directory. Note that it will not find files in subdirectories.</p>
-          <dl>
-            <dt>ls</dt><dd>starts the command, which lists directory contents.</dd>
-            <dt>*.zip</dt><dd>tells ls to match every file (represented by the asterisk) that is followed by a dot and the three letter string "zip".</dd>
-          </dl>
-          <p class="link"></p>
+      <!-- Find all zips -->
+      <span data-toggle="modal" data-target="#find_zips"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Find all ZIP files in a directory">Find all ZIPs</button></span>
+      <div id="find_zips" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="find_zips_title">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="find_zips_title" class="modal-title">Find all ZIP files in a directory</h3>
+            </div>
+            <div class="modal-body">
+              <p><code>ls *.zip</code></p>
+              <p>This will find all of the .zip files in a particular directory. Note that it will not find files in subdirectories.</p>
+              <dl>
+                <dt>ls</dt><dd>starts the command, which lists directory contents.</dd>
+                <dt>*.zip</dt><dd>tells ls to match every file (represented by the asterisk) that is followed by a dot and the three letter string "zip".</dd>
+              </dl>
+              <p class="link"></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- ends Find all zips -->
+      <!-- ends Find all zips -->
 
-  <!-- Count MP3s -->
-  <span data-toggle="modal" data-target="#count_mp3s"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Count MP3s in a directory and print results">Count MP3s in a directory</button></span>
-  <div id="count_mp3s" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="count_mp3s_title">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="count_mp3s_title" class="modal-title">Count MP3s in a directory</h3>
-        </div>
-        <div class="modal-body">
-          <p><code> ls *.mp3 | wc -l</code></p>
-          <p>This command will count the number of MP3 files in a directory. Note that it will not count files in subdirectories.</p>
-          <dl>
-            <dt>ls</dt><dd>starts the command, which lists directory contents.</dd>
-            <dt>*.mp3</dt><dd>says to print out every file that ends in .mp3</dd>
-            <dt>|</dt>(pipe) indicates the output of the first command will be passed as input for the next command.
-            <dt>wc</dt><dd>starts the next command, which prints line, word, and byte counts of input.</dd>
-            <dt>-l</dt><dd>tells <code>wc</code> to only print the number of lines</dd>
-          </dl>
-          <p class="link"></p>
+      <!-- Count MP3s -->
+      <span data-toggle="modal" data-target="#count_mp3s"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Count MP3s in a directory and print results">Count MP3s in a directory</button></span>
+      <div id="count_mp3s" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="count_mp3s_title">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="count_mp3s_title" class="modal-title">Count MP3s in a directory</h3>
+            </div>
+            <div class="modal-body">
+              <p><code> ls *.mp3 | wc -l</code></p>
+              <p>This command will count the number of MP3 files in a directory. Note that it will not count files in subdirectories.</p>
+              <dl>
+                <dt>ls</dt><dd>starts the command, which lists directory contents.</dd>
+                <dt>*.mp3</dt><dd>says to print out every file that ends in .mp3</dd>
+                <dt>|</dt>(pipe) indicates the output of the first command will be passed as input for the next command.
+                <dt>wc</dt><dd>starts the next command, which prints line, word, and byte counts of input.</dd>
+                <dt>-l</dt><dd>tells <code>wc</code> to only print the number of lines</dd>
+              </dl>
+              <p class="link"></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- ends Count MP3s -->
+      <!-- ends Count MP3s -->
 
-  <!-- Print columns -->
-  <span data-toggle="modal" data-target="#print_columns"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Print specific columns from a tab-delimited file">Print columns</button></span>
-  <div id="print_columns" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="print_columns_title">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="print_columns_title" class="modal-title">Print columns from a tab-delimited file</h3>
-        </div>
-        <div class="modal-body">
-          <p><code>cut -f2 <i>input_file</i></code></p>
-          <p>This will print the second column of a tab-delimited file.</p>
-          <dl>
-            <dt>cut</dt><dd>starts the command, which removes sections from each line of files.</dd>
-            <dt>-f2</dt><dd>tells cut to select the second field (column) for printing.</dd>
-            <dt><i>input_file</i></dt><dd>is the name of the file you want to print from.</dd>
-          </dl>
-          <p><code>cut -f2 -d',' <i>input_file</i></code></p>
-          <p>If your file uses a different delimited, such as a comma, you can adjust the command as shown above.
-          <dl>
-            <dt>-d','</dt><dd>specifies the character that is used as a delimiter; here, a comma.</dd>
-          </dl>
-          <p class="link"></p>
+      <!-- Print columns -->
+      <span data-toggle="modal" data-target="#print_columns"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Print specific columns from a tab-delimited file">Print columns</button></span>
+      <div id="print_columns" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="print_columns_title">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="print_columns_title" class="modal-title">Print columns from a tab-delimited file</h3>
+            </div>
+            <div class="modal-body">
+              <p><code>cut -f2 <i>input_file</i></code></p>
+              <p>This will print the second column of a tab-delimited file.</p>
+              <dl>
+                <dt>cut</dt><dd>starts the command, which removes sections from each line of files.</dd>
+                <dt>-f2</dt><dd>tells cut to select the second field (column) for printing.</dd>
+                <dt><i>input_file</i></dt><dd>is the name of the file you want to print from.</dd>
+              </dl>
+              <p><code>cut -f2 -d',' <i>input_file</i></code></p>
+              <p>If your file uses a different delimited, such as a comma, you can adjust the command as shown above.
+              <dl>
+                <dt>-d','</dt><dd>specifies the character that is used as a delimiter; here, a comma.</dd>
+              </dl>
+              <p class="link"></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- ends Print columns -->
+      <!-- ends Print columns -->
 
 
-  <!-- Find oldest file -->
-  <span data-toggle="modal" data-target="#find_oldest"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Find and print the oldest file and print its modification date">Find oldest file</button></span>
-  <div id="find_oldest" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="find_oldest_title">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="find_oldest_title" class="modal-title">Find oldest file and print its modification date in a friendly format</h3>
-        </div>
-        <div class="modal-body">
-          <p><code> find -type f -printf '%T+\t%TY-%TB-%Td\t%p\n' | sort -n | head -n 1 | cut -f2,3</code></p>
-          <p>Find and print the oldest file and display its modified date in a friendly format.</p>
-          <dl>
-            <dt>find</dt><dd>starts the command, which searches for file in a directory hierarchy.</dd>
-            <dt>-type f</dt><dd> tells find to look for files (and not directories).</dd>
-            <dt>-printf '%T+\t%TY-%TB-%Td\t%p\n'</dt><dd>tells find to print the exact modification time, a nicely-formatted version of the date, and the filename, separated by tabs.</dd>
-            <dt>|</dt><dd>(pipe) indicates the output of the first command will be passed as input for the next command.</dd>
-            <dt>sort -n</dt><dd>tells find to sort the output of the previous command numerically.</dd>
-            <dt>|</dt><dd>(pipe) indicates the output of the first command will be passed as input for the next command.</dd>
-            <dt>head -n 1</dt><dd>says to select just the first line of the previous output. Here it is the “smallest” (i.e., earliest) timestamp. You can replace this with tail -n 1 to find the “largest” (i.e., latest) timestamp.</dd>
-            <dt>|</dt><dd>(pipe) indicates the output of the first command will be passed as input for the next command.</dd>
-            <dt>cut -f2,3</dt><dd>says to print the second and third columns only (with the nicely formatted date and filename).</dd>
-          </dl>
-          <p class="link"></p>
+      <!-- Find oldest file -->
+      <span data-toggle="modal" data-target="#find_oldest"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Find and print the oldest file and print its modification date">Find oldest file</button></span>
+      <div id="find_oldest" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="find_oldest_title">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="find_oldest_title" class="modal-title">Find oldest file and print its modification date in a friendly format</h3>
+            </div>
+            <div class="modal-body">
+              <p><code> find -type f -printf '%T+\t%TY-%TB-%Td\t%p\n' | sort -n | head -n 1 | cut -f2,3</code></p>
+              <p>Find and print the oldest file and display its modified date in a friendly format.</p>
+              <dl>
+                <dt>find</dt><dd>starts the command, which searches for file in a directory hierarchy.</dd>
+                <dt>-type f</dt><dd> tells find to look for files (and not directories).</dd>
+                <dt>-printf '%T+\t%TY-%TB-%Td\t%p\n'</dt><dd>tells find to print the exact modification time, a nicely-formatted version of the date, and the filename, separated by tabs.</dd>
+                <dt>|</dt><dd>(pipe) indicates the output of the first command will be passed as input for the next command.</dd>
+                <dt>sort -n</dt><dd>tells find to sort the output of the previous command numerically.</dd>
+                <dt>|</dt><dd>(pipe) indicates the output of the first command will be passed as input for the next command.</dd>
+                <dt>head -n 1</dt><dd>says to select just the first line of the previous output. Here it is the “smallest” (i.e., earliest) timestamp. You can replace this with tail -n 1 to find the “largest” (i.e., latest) timestamp.</dd>
+                <dt>|</dt><dd>(pipe) indicates the output of the first command will be passed as input for the next command.</dd>
+                <dt>cut -f2,3</dt><dd>says to print the second and third columns only (with the nicely formatted date and filename).</dd>
+              </dl>
+              <p class="link"></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- ends Find oldest file -->
+      <!-- ends Find oldest file -->
 
-  <!-- Count files and directories -->
-  <span data-toggle="modal" data-target="#count_files"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Count files and directories and print out results">Count files and directories</button></span>
-  <div id="count_files" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="count_files_title">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="count_files_title" class="modal-title">Count files and directories</h3>
-        </div>
-        <div class="modal-body">
-          <p><code>echo "Digital Folders: $(find -type d | wc -l); Digital Files: $(find -type f | wc -l)"</code></p>
-          <p>The script queries a directory (using find), counts the number of new lines (using wc) to determine the number of directories (-type d) and files (-type f), then prints the output to the screen.</p>
-          <dl>
-            <dt>echo</dt><dd>starts the command, which displays a line a text.</dd>
-            <dt>"Digital Folders: </dt><dd>prints a literal string</dd>
-            <dt>$(find -type d | wc -l);</dt><dd>is a subquery that uses <code>find -type d</code> to find all directories and then pipes that to <code>wc -l</code> to count the number of lines of output.</dd>
-            <dt>Digital Files: </dt><dd>prints a literal string</dd>
-            <dt>$(find -type f | wc -l)</dt><dd>is a subquery that uses <codee>find -typd f</code> to find all files and then pipes that to <code>wc -l</code> to count the number of lines of output.</dd>
-            <p>Don't forget to end the command with quotes.</p>
-          </dl>
-          <p class="link"></p>
+      <!-- Count files and directories -->
+      <span data-toggle="modal" data-target="#count_files"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Count files and directories and print out results">Count files and directories</button></span>
+      <div id="count_files" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="count_files_title">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="count_files_title" class="modal-title">Count files and directories</h3>
+            </div>
+            <div class="modal-body">
+              <p><code>echo "Digital Folders: $(find -type d | wc -l); Digital Files: $(find -type f | wc -l)"</code></p>
+              <p>The script queries a directory (using find), counts the number of new lines (using wc) to determine the number of directories (-type d) and files (-type f), then prints the output to the screen.</p>
+              <dl>
+                <dt>echo</dt><dd>starts the command, which displays a line a text.</dd>
+                <dt>"Digital Folders: </dt><dd>prints a literal string</dd>
+                <dt>$(find -type d | wc -l);</dt><dd>is a subquery that uses <code>find -type d</code> to find all directories and then pipes that to <code>wc -l</code> to count the number of lines of output.</dd>
+                <dt>Digital Files: </dt><dd>prints a literal string</dd>
+                <dt>$(find -type f | wc -l)</dt><dd>is a subquery that uses <codee>find -typd f</code> to find all files and then pipes that to <code>wc -l</code> to count the number of lines of output.</dd>
+                <p>Don't forget to end the command with quotes.</p>
+              </dl>
+              <p class="link"></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- ends Count files and directories -->
+      <!-- ends Count files and directories -->
 
 
-<!-- Compare two text files -->
-  <span data-toggle="modal" data-target="#compare_textfiles"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Compare two textfiles and display differences">Compare two textfiles</button></span>
-  <div id="compare_textfiles" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="compare_textfiles_title">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="count_files_title" class="modal-title">Compare two textfiles</h3>
-        </div>
-        <div class="modal-body">
-          <p><code>diff <i>input_file_1 </i> <i>input_file_2</i></code></p>
-          <p>This will compare two textfiles and show the differences, if any. </p>
-          <dl>
-            <dt>diff</dt><dd>starts the command, which compares your two text files</dd>
-            <dt><i>input_file_1</i></dt><dd>is the name of your first text file.</dd>
-            <dt><i>input_file_2</i></dt><dd>is the name of the file that you want to compare it to.</dd>
-          </dl>
-          <p class="link"></p>
+    <!-- Compare two text files -->
+      <span data-toggle="modal" data-target="#compare_textfiles"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Compare two textfiles and display differences">Compare two textfiles</button></span>
+      <div id="compare_textfiles" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="compare_textfiles_title">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="count_files_title" class="modal-title">Compare two textfiles</h3>
+            </div>
+            <div class="modal-body">
+              <p><code>diff <i>input_file_1 </i> <i>input_file_2</i></code></p>
+              <p>This will compare two textfiles and show the differences, if any. </p>
+              <dl>
+                <dt>diff</dt><dd>starts the command, which compares your two text files</dd>
+                <dt><i>input_file_1</i></dt><dd>is the name of your first text file.</dd>
+                <dt><i>input_file_2</i></dt><dd>is the name of the file that you want to compare it to.</dd>
+              </dl>
+              <p class="link"></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- ends Compare two textfiles -->
+      <!-- ends Compare two textfiles -->
 
-<!-- Compare two binary streams -->
-  <span data-toggle="modal" data-target="#compare_binaries"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Compare two binary streams and display differences">Compare two binary streams</button></span>
-  <div id="compare_binaries" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="compare_binaries_title">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="compare_binaries_title" class="modal-title">Compare two binary streams</h3>
-        </div>
-        <div class="modal-body">
-          <p><code>cmp -l <i>input_file_1 </i> <i>input_file_2</i></code></p>
-          <p>This will compare two binary streams and show the address and bytes of each difference, if any. </p>
-          <dl>
-            <dt>cmp</dt><dd>starts the command, which compares your two files</dd>
-            <dt>-l</dt><dd>tells cmp to list all the differences.</dd>
-            <dt><i>input_file_1</i></dt><dd>is the name of your first file.</dd>
-            <dt><i>input_file_2</i></dt><dd>is the name of the file that you want to compare it to.</dd>
-          </dl>
-          <p class="link"></p>
+    <!-- Compare two binary streams -->
+      <span data-toggle="modal" data-target="#compare_binaries"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Compare two binary streams and display differences">Compare two binary streams</button></span>
+      <div id="compare_binaries" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="compare_binaries_title">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="compare_binaries_title" class="modal-title">Compare two binary streams</h3>
+            </div>
+            <div class="modal-body">
+              <p><code>cmp -l <i>input_file_1 </i> <i>input_file_2</i></code></p>
+              <p>This will compare two binary streams and show the address and bytes of each difference, if any. </p>
+              <dl>
+                <dt>cmp</dt><dd>starts the command, which compares your two files</dd>
+                <dt>-l</dt><dd>tells cmp to list all the differences.</dd>
+                <dt><i>input_file_1</i></dt><dd>is the name of your first file.</dd>
+                <dt><i>input_file_2</i></dt><dd>is the name of the file that you want to compare it to.</dd>
+              </dl>
+              <p class="link"></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-<!-- ends Compare two binaries -->
+    <!-- ends Compare two binaries -->
 
-<!-- Percentage difference -->
-  <span data-toggle="modal" data-target="#percent_different"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Calculate difference between two binary streams">Calculate difference between two binary streams</button></span>
-  <div id="percent_different" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="percent_different_title">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="percent_different_title" class="modal-title">Calculate the percentage of difference between two bytestreams</h3>
-        </div>
-        <div class="modal-body">
-          <p><code>echo "100 * $(cmp -l <i>input_file_1</i> <i>input_file_2</i> | wc -l)/$(wc -c <i>input_file_2</i> | cut -d' ' -f4)" | bc -l</code></p>
-          <p>This will compare two binary streams and show the address and bytes of each difference, if any.</p>
-          <p>For example, if two disk images of the same item have different checksums this will indicate how different they are.</p>
-          <p>Or, if you suspect that an operation has corrupted a bitstream, this will indicate the amount of corruption.</p>
-          <p>There's a lot going on here, but if you'd like to adapt the command, the gist of it is:</p>
-          <p><code>echo "100 * $(commands to find number of different bytes)/$(commands to find total number of bytes)" | bc -l</code></p>
-          <dl>
-            <dt>echo</dt><dd>in order to eventually pipe the fraction to bc, we need to wrap everything in an echo command.</dd>
-            <dt>"..."</dt><dd>tell echo what information to echo</dd>
-            <dt>100 *</dt><dd>multiply by 100 to format the percentage correctly</dd>
-            <dt>$(...)</dt><dd>evaluate everything inside of the parentheses</dd>
-            <dt>cmp</dt><dd>starts the command, which compares your two files</dd>
-            <dt>-l</dt><dd>tell cmp to list all the differences.</dd>
-            <dt><i>input_file_1</i></dt><dd>is the name of your first file.</dd>
-            <dt><i>input_file_2</i></dt><dd>is the name of the file that you want to compare it to.</dd>
-            <dt>wc</dt><dd>start the word count command, to summarize the differences found with cmp.</dd>
-            <dt>-l</dt><dd>tell wc to count by line, since cmp listed differences by line.</dd>
-            <dt>/</dt><dd>integer division. For decimal division, the result is piped to bc eventually.</dd>
-            <dt>wc</dt><dd>start the word count command, to find the byte size of the comparison file.</dd>
-            <dt>-c</dt><dd>tell wc to count by byte.</dd>
-            <dt>cut</dt><dd>start the cut command to slice the needed information out of the results of wc -c.</dd>
-            <dt>-d' '</dt><dd>specify that ' ' characters are delimiting the fields in the string.</dd>
-            <dt>-f4</dt><dd>specify that the information needed is in the fourth field.</dd>
-            <dt>bc</dt><dd>start the precision math command, in order to get the decimal result</dd>
-            <dt>-l</dt><dd>tell bc to use the standard math library</dd>
-          </dl>
-          <p class="link"></p>
+    <!-- Percentage difference -->
+      <span data-toggle="modal" data-target="#percent_different"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Calculate difference between two binary streams">Calculate difference between two binary streams</button></span>
+      <div id="percent_different" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="percent_different_title">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="percent_different_title" class="modal-title">Calculate the percentage of difference between two bytestreams</h3>
+            </div>
+            <div class="modal-body">
+              <p><code>echo "100 * $(cmp -l <i>input_file_1</i> <i>input_file_2</i> | wc -l)/$(wc -c <i>input_file_2</i> | cut -d' ' -f4)" | bc -l</code></p>
+              <p>This will compare two binary streams and show the address and bytes of each difference, if any.</p>
+              <p>For example, if two disk images of the same item have different checksums this will indicate how different they are.</p>
+              <p>Or, if you suspect that an operation has corrupted a bitstream, this will indicate the amount of corruption.</p>
+              <p>There's a lot going on here, but if you'd like to adapt the command, the gist of it is:</p>
+              <p><code>echo "100 * $(commands to find number of different bytes)/$(commands to find total number of bytes)" | bc -l</code></p>
+              <dl>
+                <dt>echo</dt><dd>in order to eventually pipe the fraction to bc, we need to wrap everything in an echo command.</dd>
+                <dt>"..."</dt><dd>tell echo what information to echo</dd>
+                <dt>100 *</dt><dd>multiply by 100 to format the percentage correctly</dd>
+                <dt>$(...)</dt><dd>evaluate everything inside of the parentheses</dd>
+                <dt>cmp</dt><dd>starts the command, which compares your two files</dd>
+                <dt>-l</dt><dd>tell cmp to list all the differences.</dd>
+                <dt><i>input_file_1</i></dt><dd>is the name of your first file.</dd>
+                <dt><i>input_file_2</i></dt><dd>is the name of the file that you want to compare it to.</dd>
+                <dt>wc</dt><dd>start the word count command, to summarize the differences found with cmp.</dd>
+                <dt>-l</dt><dd>tell wc to count by line, since cmp listed differences by line.</dd>
+                <dt>/</dt><dd>integer division. For decimal division, the result is piped to bc eventually.</dd>
+                <dt>wc</dt><dd>start the word count command, to find the byte size of the comparison file.</dd>
+                <dt>-c</dt><dd>tell wc to count by byte.</dd>
+                <dt>cut</dt><dd>start the cut command to slice the needed information out of the results of wc -c.</dd>
+                <dt>-d' '</dt><dd>specify that ' ' characters are delimiting the fields in the string.</dd>
+                <dt>-f4</dt><dd>specify that the information needed is in the fourth field.</dd>
+                <dt>bc</dt><dd>start the precision math command, in order to get the decimal result</dd>
+                <dt>-l</dt><dd>tell bc to use the standard math library</dd>
+              </dl>
+              <p class="link"></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-<!-- ends percentage difference -->
+    <!-- ends percentage difference -->
 
-<!-- List files and write out to external text file -->
-  <span data-toggle="modal" data-target="#write_files_to_txt"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="List files/folders and write out to external text file">List files/folders and write out to external text file</button></span>
-  <div id="write_files_to_txt" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="write_files_to_txt_title">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="write_files_to_txt_title" class="modal-title">List files/folders and write out to external text file</h3>
-        </div>
-        <div class="modal-body">
-          <p><code>ls -alR /set/your/path/here > /set/your/output/path/inventory.txt</code></p>
-          <p>Extract a list of files/directories (as well as filesystem data about the files/directories) to a "space" separated text file that you can parse separately from the CLI interface.</p>
-          <dl>
-            <dt>ls</dt><dd>starts the command, which lists files and folders.</dd>
-            <dt> -alR</dt><dd>tells ls to include "hidden" files and folders in the list (-a), to include permissions, owners, size, and date modified of each file and folder (-d), and to recursively go into nested folders to list files and folders (-R).</dd>
-            <dt> /set/your/path/here</dt><dd>tells ls where to start its list of files and folders.</dd>
-            <dt> /set/your/output/path/inventory.txt</dt><dd>tells bash where to put the resulting text file. Do note that if a file already exists in that location, it may be automatically overwritten! (See <a href="index.html#noclobber" target="blank">Don't accidentally overwrite existing files</a> to see how to prevent automatic overwriting of files in your scripts.)</dd>
-          </dl>
-          <p class="link"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- ends List files and write out to external text file -->
-
-  <!-- Disk usage -->
-  <span data-toggle="modal" data-target="#disk_usage"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Check disk usage">Disk usage</button></span>
-  <div id="disk_usage" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="find_zips_title">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="find_zips_title" class="modal-title">Checks disk usage for folder</h3>
-        </div>
-        <div class="modal-body">
-          <p><code>du -sch /set/your/path/here/*</code></p>
-          <p>This will give you disk usage information for all files in a chosen directory.</p>
-          <dl>
-            <dt>du</dt><dd>starts the command, which lists directory contents.</dd>
-            <dt>-sch</dt><dd>-sch is a series of flags. This could also be written out as <code>-s -c -h</code> instead. Each letter represents a different, chosen option for the command.<br/>
-            <code>-s</code> indicates that you want one entry per file.<br/>
-            <code>-c</code> indicates that you want to calculate the grand total.<br/>
-            <code>-h</code> indicates that you want these results in human-readable units.
-            </dd>
-            <dt>/set/your/path/here/*</dt><dd>Defines the file path you want to search. The asterisk at the end of this file path indicates that you want information about everything in the chosen directory.</dd>
-          </dl>
-          <p class="link"></p>
+    <!-- List files and write out to external text file -->
+      <span data-toggle="modal" data-target="#write_files_to_txt"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="List files/folders and write out to external text file">List files/folders and write out to external text file</button></span>
+      <div id="write_files_to_txt" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="write_files_to_txt_title">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="write_files_to_txt_title" class="modal-title">List files/folders and write out to external text file</h3>
+            </div>
+            <div class="modal-body">
+              <p><code>ls -alR /set/your/path/here > /set/your/output/path/inventory.txt</code></p>
+              <p>Extract a list of files/directories (as well as filesystem data about the files/directories) to a "space" separated text file that you can parse separately from the CLI interface.</p>
+              <dl>
+                <dt>ls</dt><dd>starts the command, which lists files and folders.</dd>
+                <dt> -alR</dt><dd>tells ls to include "hidden" files and folders in the list (-a), to include permissions, owners, size, and date modified of each file and folder (-d), and to recursively go into nested folders to list files and folders (-R).</dd>
+                <dt> /set/your/path/here</dt><dd>tells ls where to start its list of files and folders.</dd>
+                <dt> /set/your/output/path/inventory.txt</dt><dd>tells bash where to put the resulting text file. Do note that if a file already exists in that location, it may be automatically overwritten! (See <a href="index.html#noclobber" target="blank">Don't accidentally overwrite existing files</a> to see how to prevent automatic overwriting of files in your scripts.)</dd>
+              </dl>
+              <p class="link"></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- ends Disk usage -->
+      <!-- ends List files and write out to external text file -->
 
-</div><!-- ends Find and intrepret files -->
- <div class="well">
-  <h4>Add helpful flags into bash shell scripts</h4>
-
-  <!-- Don't overwrite files on redirect -->
-  <span data-toggle="modal" data-target="#noclobber"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Don't accidentally overwrite existing files">Don't overwrite files</button></span>
-  <div id="noclobber" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="noclobber_title">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="noclobber_title" class="modal-title">Don't accidentally overwrite existing files</h3>
-        </div>
-        <div class="modal-body">
-          <p><code>set -o noclobber</code></p>
-          <p>Set a flag so that you don't accidentally overwrite existing files when redirecting output from another command. This can be helpful if you are trying to create log files from the output of your script, but want to ensure that you don't write over any file that already exists.</p>
-          <p>Add this line after <code>#!/bin/bash</code> and before the rest of your code starts.</p>
-          <p>You can also issue this command in a Terminal window, but know that its effects are not permanent. (Meaning that, if you open a new Terminal window, you'll have to issue the command again to get the same effect.)</p>
-          <p class="link"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- ends Don't overwrite files on redirect -->
-
-  <!-- Exit after any error -->
-  <span data-toggle="modal" data-target="#exiterr"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Exit a script immediately if any command returns an error">Exit immediately after error</button></span>
-  <div id="exiterr" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exiterr_title">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="exiterr_title" class="modal-title">Exit a script immediately if any command returns an error</h3>
-        </div>
-        <div class="modal-body">
-          <p><code>set -o errexit</code></p>
-          <p>Set a flag so that if any one part of your shell script returns an error, the entire script stops. This can be super helpful if you have a loop in your script: the script will not issue multiple consecutive errors but instead quit after the first one. This also can be helpful if you are debugging someone else's code and are not sure why it is not working on your system.</p>
-          <p>Add this line after <code>#!/bin/bash</code> and before the rest of your code starts.</p>
-          <p>You can also issue this command in a Terminal window, but know that its effects are not permanent. (Meaning that, if you open a new Terminal window, you'll have to issue the command again to get the same effect.)</p>
-          <p class="link"></p>
+      <!-- Disk usage -->
+      <span data-toggle="modal" data-target="#disk_usage"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Check disk usage">Disk usage</button></span>
+      <div id="disk_usage" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="find_zips_title">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="find_zips_title" class="modal-title">Checks disk usage for folder</h3>
+            </div>
+            <div class="modal-body">
+              <p><code>du -sch /set/your/path/here/*</code></p>
+              <p>This will give you disk usage information for all files in a chosen directory.</p>
+              <dl>
+                <dt>du</dt><dd>starts the command, which lists directory contents.</dd>
+                <dt>-sch</dt><dd>-sch is a series of flags. This could also be written out as <code>-s -c -h</code> instead. Each letter represents a different, chosen option for the command.<br/>
+                <code>-s</code> indicates that you want one entry per file.<br/>
+                <code>-c</code> indicates that you want to calculate the grand total.<br/>
+                <code>-h</code> indicates that you want these results in human-readable units.
+                </dd>
+                <dt>/set/your/path/here/*</dt><dd>Defines the file path you want to search. The asterisk at the end of this file path indicates that you want information about everything in the chosen directory.</dd>
+              </dl>
+              <p class="link"></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- ends Exit after any error -->
+      <!-- ends Disk usage -->
 
-  <!-- Battle whitespace in filenames -->
-  <span data-toggle="modal" data-target="#whitespacefile"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="One technique for handling whitespace in filenames">Handle whitespaces in filenames</button></span>
-  <div id="whitespacefile" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="whitespacefile_title">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="whitespacefile_title" class="modal-title">One technique for handling whitespace in filenames</h3>
-        </div>
-        <div class="modal-body">
-          <p><code>OIFS=$IFS</code></p>
-          <p><code>IFS=$'\n'</code></p>
-          <p><code>[script text]</code></p>
-          <p><code>IFS=$OIFS</code></p>
-          <p>Set a flag so that bash only interprets new lines as delimiters. Use this if you find that, in your code, you are getting weird errors because certain filenames have spaces in them, and there's no other way around that. (i.e., If you're not allowed or don't want to rename files that have spaces in them.)</p>
-          <p>Add the first two lines after <code>#!/bin/bash</code> and before the rest of your code starts.</p>
-          <p>At the end of the script, use the last line to re-set $IFS to its original value.</p>
-          <p class="link"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- ends Battle whitespace in filenames -->
+    </div><!-- ends Find and intrepret files -->
+     <div class="well">
+      <h4>Add helpful flags into bash shell scripts</h4>
 
-
-
-</div><!-- Ends helpful stuff in bash scripts -->
-
-<div class="well">
- <h4>Increase control on the command line</h4>
-
-  <!-- Move cursor to start of line -->
-  <span data-toggle="modal" data-target="#movetostart"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Move the cursor the beginning of the line">Move the cursor to the beginning of the line</button></span>
-  <div id="movetostart" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="movetostart_title">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="whitespacefile_title" class="modal-title">Moving the cursor to the beginning of the line</h3>
-        </div>
-        <div class="modal-body">
-          <p><code>ctrl+a</code></p>
-          <p>Sometimes when you're editing a command, the part you want to edit is buried at the beginning of the line. In that case, it can be faster to jump to the start of the line and move the cursor to the part you want to edit, instead of moving backwards from the end of the line.</p>
-          <p>On the keyboard, press the <code>control</code> key and the <code>a</code> at the same time, and the cursor will move to the start of line.</p>
-          <p>Your console might have other shortcuts for moving the cursor forward or backward one word at a time.</p>
-          <p class="link"></p>
+      <!-- Don't overwrite files on redirect -->
+      <span data-toggle="modal" data-target="#noclobber"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Don't accidentally overwrite existing files">Don't overwrite files</button></span>
+      <div id="noclobber" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="noclobber_title">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="noclobber_title" class="modal-title">Don't accidentally overwrite existing files</h3>
+            </div>
+            <div class="modal-body">
+              <p><code>set -o noclobber</code></p>
+              <p>Set a flag so that you don't accidentally overwrite existing files when redirecting output from another command. This can be helpful if you are trying to create log files from the output of your script, but want to ensure that you don't write over any file that already exists.</p>
+              <p>Add this line after <code>#!/bin/bash</code> and before the rest of your code starts.</p>
+              <p>You can also issue this command in a Terminal window, but know that its effects are not permanent. (Meaning that, if you open a new Terminal window, you'll have to issue the command again to get the same effect.)</p>
+              <p class="link"></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- ends Move cursor to start of line -->
+      <!-- ends Don't overwrite files on redirect -->
 
-  <!-- Move cursor with mouse -->
-  <span data-toggle="modal" data-target="#mousecursor"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Move the cursor using the mouse">Move the cursor using the mouse</button></span>
-  <div id="mousecursor" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mousecursor_title">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="whitespacefile_title" class="modal-title">Moving the cursor using the mouse</h3>
-        </div>
-        <div class="modal-body">
-          <p>On Mac or Linux, hold <code>alt/option</code> and click with the mouse</p>
-          <p>Sometimes when you're editing a command, it can be frustrating to move the cursor to the right position with the arrow keys. In that case, it can be faster to jump to the spot you want to edit directly.</p>
-          <p>On the keyboard, press the <code>alt/option</code> key and then click on the location where you want to place the cursor on the command line.</p>
-          <p class="link"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- ends Move cursor with mouse -->
-
-  <!-- Stop script -->
-  <span data-toggle="modal" data-target="#stopscript"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Stop a command">Stop a command</button></span>
-  <div id="stopscript" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="stopscript_title">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="whitespacefile_title" class="modal-title">Stop a command while it's running</h3>
-        </div>
-        <div class="modal-body">
-          <p><code>ctrl+c</code></p>
-          <p>When:<ul>
-            <li>a command is running, and it won't stop,</li>
-            <li>the wrong command is running, and you need to stop it,</li>
-            <li>the command has a bug, and you need to stop it,</li>
-          </ul>press <code>ctrl+c</code> on the keyboard.</p>
-          <p>If one press doesn't work, try holding <code>ctrl</code> and tapping <code>c</code>.</p>
-          <p class="link"></p>
+      <!-- Exit after any error -->
+      <span data-toggle="modal" data-target="#exiterr"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Exit a script immediately if any command returns an error">Exit immediately after error</button></span>
+      <div id="exiterr" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exiterr_title">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="exiterr_title" class="modal-title">Exit a script immediately if any command returns an error</h3>
+            </div>
+            <div class="modal-body">
+              <p><code>set -o errexit</code></p>
+              <p>Set a flag so that if any one part of your shell script returns an error, the entire script stops. This can be super helpful if you have a loop in your script: the script will not issue multiple consecutive errors but instead quit after the first one. This also can be helpful if you are debugging someone else's code and are not sure why it is not working on your system.</p>
+              <p>Add this line after <code>#!/bin/bash</code> and before the rest of your code starts.</p>
+              <p>You can also issue this command in a Terminal window, but know that its effects are not permanent. (Meaning that, if you open a new Terminal window, you'll have to issue the command again to get the same effect.)</p>
+              <p class="link"></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- ends Stop script -->
+      <!-- ends Exit after any error -->
 
-  <!-- Really stop script -->
-  <span data-toggle="modal" data-target="#killscript"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Really stop a command">Don't just stop, kill a command</button></span>
-  <div id="killscript" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="killscript_title">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="whitespacefile_title" class="modal-title">Don't just stop, kill a command</h3>
-        </div>
-        <div class="modal-body">
-          <p><code>ctrl+z</code></p>
-          <p><code>kill %%</code></p>
-          <p>When you try to stop a command, but <a href="#killscript"></a><code>ctrl+c</code></a> doesn't work.</p>
-          <dt>ctrl+z</dt><dd>suspend the current command.</dd>
-          <dt>kill %%</dt><dd>stop the last suspended commanded, metaphorically yanking the power.</dd>
-          <p class="link"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- ends Really stop script -->
-
-  <!-- Increase bash history -->
-  <span data-toggle="modal" data-target="#morehistory"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Save more commands in your history">Save more commands in your history</button></span>
-  <div id="morehistory" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="morehistory_title">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="whitespacefile_title" class="modal-title">Save more commands in your history</h3>
-        </div>
-        <div class="modal-body">
-          <p>The terminal saves the commands that you enter into a history file. When you press <code>up</code>, the terminal retrieves lines from this history file one-by-one. It can be helpful to save more than the default number of commands. To do that you need to increase the storage of the history cache and history file.</p>
-          <p><code>echo "export $HISTSIZE=5000" >> ~/.bash_profile</code></p>
-          <dl>
-            <dt>echo ""</dt><dd>starts the command, which repeats what is inside the quotes as an argument for another command.<dd>
-            <dt>export</dt><dd>is a command that makes a variable available to all programs in your terminal.</dd>
-            <dt>$HISTSIZE=</dt><dd>is the variable used by bash to control how many lines are stored in the history cache.</dd>
-            <dt>5000</dt><dd>how many lines you would like to store. Using -1 sets the storage to unlimited.</dd>
-            <dt>>></dt><dd>appends the output of the previous command to the end of a file.</dd>
-            <dt>~/.bash_profile</dt><dd>is the file used to store configuration options.</dd>
-          </dl>
-          <p><code>echo "export $HISTFILESIZE=5000" >> ~/.bash_profile</code></p>
-          <dl>
-            <dt>$HISTFILESIZE=</dt><dd>is the variable used by bash to control how many lines are stored in the history file.</dd>
-          </dl>
-          <p class="link"></p>
+      <!-- Battle whitespace in filenames -->
+      <span data-toggle="modal" data-target="#whitespacefile"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="One technique for handling whitespace in filenames">Handle whitespaces in filenames</button></span>
+      <div id="whitespacefile" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="whitespacefile_title">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="whitespacefile_title" class="modal-title">One technique for handling whitespace in filenames</h3>
+            </div>
+            <div class="modal-body">
+              <p><code>OIFS=$IFS</code></p>
+              <p><code>IFS=$'\n'</code></p>
+              <p><code>[script text]</code></p>
+              <p><code>IFS=$OIFS</code></p>
+              <p>Set a flag so that bash only interprets new lines as delimiters. Use this if you find that, in your code, you are getting weird errors because certain filenames have spaces in them, and there's no other way around that. (i.e., If you're not allowed or don't want to rename files that have spaces in them.)</p>
+              <p>Add the first two lines after <code>#!/bin/bash</code> and before the rest of your code starts.</p>
+              <p>At the end of the script, use the last line to re-set $IFS to its original value.</p>
+              <p class="link"></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- ends Increase bash history -->
+      <!-- ends Battle whitespace in filenames -->
 
-  <!-- Search bash history -->
-  <span data-toggle="modal" data-target="#searchhistory"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Find an old command">Find an old command</button></span>
-  <div id="searchhistory" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="searchhistory_title">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 id="searchhistory_title" class="modal-title">Find an old command</h3>
-        </div>
-        <div class="modal-body">
-          <p>Remember that super-long, super-complicated, super-great bash command you used once? Want to use it again but don't want to search your commands one <code>up</code> press at a time? This command searches your saved command history using grep.</p>
-          <p><code>history | grep "<i>search_term</i>"</code></p>
-          <dl>
-            <dt>history</dt><dd>prints a log of your bash commands up to limit set by $HISTSIZE.<dd>
-            <dt>grep</dt><dd>searches text using patterns known as regular expressions.</dd>
-            <dt>"<i>search_term</i>"</dt><dd>the pattern grep looks for. Using numbers, letters, and spaces will do a regular search. Some punctuation characters kick off special functions. For example, <code>.<code> is a wildcard character.</dd>
-          </dl>
-          <p class="link"></p>
+
+
+    </div><!-- Ends helpful stuff in bash scripts -->
+
+    <div class="well">
+     <h4>Increase control on the command line</h4>
+
+      <!-- Move cursor to start of line -->
+      <span data-toggle="modal" data-target="#movetostart"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Move the cursor the beginning of the line">Move the cursor to the beginning of the line</button></span>
+      <div id="movetostart" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="movetostart_title">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="whitespacefile_title" class="modal-title">Moving the cursor to the beginning of the line</h3>
+            </div>
+            <div class="modal-body">
+              <p><code>ctrl+a</code></p>
+              <p>Sometimes when you're editing a command, the part you want to edit is buried at the beginning of the line. In that case, it can be faster to jump to the start of the line and move the cursor to the part you want to edit, instead of moving backwards from the end of the line.</p>
+              <p>On the keyboard, press the <code>control</code> key and the <code>a</code> at the same time, and the cursor will move to the start of line.</p>
+              <p>Your console might have other shortcuts for moving the cursor forward or backward one word at a time.</p>
+              <p class="link"></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- ends Increase bash history -->
+      <!-- ends Move cursor to start of line -->
 
-</div><!-- Ends helpful stuff using terminal -->
-
-
-</div><!-- closes the big well -->
-
-
-
-<!-- sample example -->
-<!-- <span data-toggle="modal" data-target="#*****unique name*****"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="*****Hover-over description*****">*****Small title****</button></span>
-Change the above data-target field, the button text, and the below div class (the word after modal fade)
-<div id="*****unique name*****" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="*****unique name*****_title">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h3 id="*****unique name*****_title" class="modal-title">*****Longer title*****</h3>
+      <!-- Move cursor with mouse -->
+      <span data-toggle="modal" data-target="#mousecursor"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Move the cursor using the mouse">Move the cursor using the mouse</button></span>
+      <div id="mousecursor" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mousecursor_title">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="whitespacefile_title" class="modal-title">Moving the cursor using the mouse</h3>
+            </div>
+            <div class="modal-body">
+              <p>On Mac or Linux, hold <code>alt/option</code> and click with the mouse</p>
+              <p>Sometimes when you're editing a command, it can be frustrating to move the cursor to the right position with the arrow keys. In that case, it can be faster to jump to the spot you want to edit directly.</p>
+              <p>On the keyboard, press the <code>alt/option</code> key and then click on the location where you want to place the cursor on the command line.</p>
+              <p class="link"></p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
-        <p> <code>ffmpeg -i <i>input_file</i></code>  *****code goes here***** <i>output_file</i></p>
+      <!-- ends Move cursor with mouse -->
+
+      <!-- Stop script -->
+      <span data-toggle="modal" data-target="#stopscript"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Stop a command">Stop a command</button></span>
+      <div id="stopscript" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="stopscript_title">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="whitespacefile_title" class="modal-title">Stop a command while it's running</h3>
+            </div>
+            <div class="modal-body">
+              <p><code>ctrl+c</code></p>
+              <p>When:<ul>
+                <li>a command is running, and it won't stop,</li>
+                <li>the wrong command is running, and you need to stop it,</li>
+                <li>the command has a bug, and you need to stop it,</li>
+              </ul>press <code>ctrl+c</code> on the keyboard.</p>
+              <p>If one press doesn't work, try holding <code>ctrl</code> and tapping <code>c</code>.</p>
+              <p class="link"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ends Stop script -->
+
+      <!-- Really stop script -->
+      <span data-toggle="modal" data-target="#killscript"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Really stop a command">Don't just stop, kill a command</button></span>
+      <div id="killscript" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="killscript_title">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="whitespacefile_title" class="modal-title">Don't just stop, kill a command</h3>
+            </div>
+            <div class="modal-body">
+              <p><code>ctrl+z</code></p>
+              <p><code>kill %%</code></p>
+              <p>When you try to stop a command, but <a href="#killscript"></a><code>ctrl+c</code></a> doesn't work.</p>
+              <dt>ctrl+z</dt><dd>suspend the current command.</dd>
+              <dt>kill %%</dt><dd>stop the last suspended commanded, metaphorically yanking the power.</dd>
+              <p class="link"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ends Really stop script -->
+
+      <!-- Increase bash history -->
+      <span data-toggle="modal" data-target="#morehistory"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Save more commands in your history">Save more commands in your history</button></span>
+      <div id="morehistory" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="morehistory_title">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="whitespacefile_title" class="modal-title">Save more commands in your history</h3>
+            </div>
+            <div class="modal-body">
+              <p>The terminal saves the commands that you enter into a history file. When you press <code>up</code>, the terminal retrieves lines from this history file one-by-one. It can be helpful to save more than the default number of commands. To do that you need to increase the storage of the history cache and history file.</p>
+              <p><code>echo "export $HISTSIZE=5000" >> ~/.bash_profile</code></p>
+              <dl>
+                <dt>echo ""</dt><dd>starts the command, which repeats what is inside the quotes as an argument for another command.<dd>
+                <dt>export</dt><dd>is a command that makes a variable available to all programs in your terminal.</dd>
+                <dt>$HISTSIZE=</dt><dd>is the variable used by bash to control how many lines are stored in the history cache.</dd>
+                <dt>5000</dt><dd>how many lines you would like to store. Using -1 sets the storage to unlimited.</dd>
+                <dt>>></dt><dd>appends the output of the previous command to the end of a file.</dd>
+                <dt>~/.bash_profile</dt><dd>is the file used to store configuration options.</dd>
+              </dl>
+              <p><code>echo "export $HISTFILESIZE=5000" >> ~/.bash_profile</code></p>
+              <dl>
+                <dt>$HISTFILESIZE=</dt><dd>is the variable used by bash to control how many lines are stored in the history file.</dd>
+              </dl>
+              <p class="link"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ends Increase bash history -->
+
+      <!-- Search bash history -->
+      <span data-toggle="modal" data-target="#searchhistory"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Find an old command">Find an old command</button></span>
+      <div id="searchhistory" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="searchhistory_title">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="searchhistory_title" class="modal-title">Find an old command</h3>
+            </div>
+            <div class="modal-body">
+              <p>Remember that super-long, super-complicated, super-great bash command you used once? Want to use it again but don't want to search your commands one <code>up</code> press at a time? This command searches your saved command history using grep.</p>
+              <p><code>history | grep "<i>search_term</i>"</code></p>
+              <dl>
+                <dt>history</dt><dd>prints a log of your bash commands up to limit set by $HISTSIZE.<dd>
+                <dt>grep</dt><dd>searches text using patterns known as regular expressions.</dd>
+                <dt>"<i>search_term</i>"</dt><dd>the pattern grep looks for. Using numbers, letters, and spaces will do a regular search. Some punctuation characters kick off special functions. For example, <code>.</code> is a wildcard character.</dd>
+              </dl>
+              <p class="link"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ends Increase bash history -->
+
+    </div><!-- Ends helpful stuff using terminal -->
+
+
+    </div><!-- closes the big well -->
+
+
+
+    <!-- sample example -->
+    <!-- <span data-toggle="modal" data-target="#*****unique name*****"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="*****Hover-over description*****">*****Small title****</button></span>
+    Change the above data-target field, the button text, and the below div class (the word after modal fade)
+    <div id="*****unique name*****" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="*****unique name*****_title">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h3 id="*****unique name*****_title" class="modal-title">*****Longer title*****</h3>
+          </div>
+          <div class="modal-body">
+            <p> <code>ffmpeg -i <i>input_file</i></code>  *****code goes here***** <i>output_file</i></p>
         <p>This is all about info! This is all about info! This is all about info! This is all about info! This is all about info! This is all about info! This is all about info! This is all about info! This is all about info! This is all about info! This is all about info! This is all about info! This is all about info! This is all about info!</p>
         <dl>
           <dt>ffmpeg</dt><dd>starts the command</dd>
