@@ -77,3 +77,17 @@ div {
   -webkit-transform: scale(1.3) translateZ(0);
   transform: scale(1.3) translateZ(0);
 }
+
+table {
+  border-spacing: 5px 12px;
+  padding: 0 8px 8px 0;
+  border: 1px solid;
+  width: 100%;
+}
+
+td {
+  border: 1px solid;
+  padding: 8px 8px 8px 8px;
+  text-align: left;
+  height: 50px;
+}
