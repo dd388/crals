@@ -744,7 +744,96 @@
       <!-- ends Increase bash history -->
 
     </div><!-- Ends helpful stuff using terminal -->
+    <!-- Start Manage mounted drives and image them -->
+    <div class="well">
+     <h4>Manage Mounted Drives and Image Them</h4>
 
+     <!-- Find a drive location with diskutil  -->
+     <span data-toggle="modal" data-target="#diskutillist"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Find a drive location with diskutil (Mac)">Find a drive location with diskutil (Mac)</button></span>
+     <div id="diskutillist" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="diskutillist_title">
+       <div class="modal-dialog modal-lg">
+         <div class="modal-content">
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+             <h3 id="diskutillist_title" class="modal-title">Find a drive location with diskutil (Mac)</h3>
+           </div>
+           <div class="modal-body">
+             <p><code>diskutil list</code> (Mac)</p>
+             <p>diskutil manipulates the structure of local disks (from the manual). Used with the -list option, it displays all whole disks (internal and external) and their partitions; the output includes their locations or numbers. This is useful for other diskutil commands, like un/mounting and ejecting drives. (See <a href="index.html#diskutilunmount" target="_blank">Unmount a drive with diskutil.)</a></p>
+             <p class="link"></p>
+           </div>
+         </div>
+       </div>
+     </div>
+     <!-- ends Find a drive number with diskutil -->
+
+     <!-- Unmount drive with diskutil  -->
+     <span data-toggle="modal" data-target="#diskutilunmount"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Unmount drive with diskutil (Mac)" target="blank">Unmount a drive with diskutil (Mac)</button></span>
+     <div id="diskutilunmount" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="diskutilunmount_title">
+       <div class="modal-dialog modal-lg">
+         <div class="modal-content">
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+             <h3 id="diskutilunmount_title" class="modal-title">Unmount a drive with diskutil (Mac)</h3>
+           </div>
+           <div class="modal-body">
+            <p><code>diskutil unmountDisk /dev/disk/disk_number</code></p>
+             <p>Unmounts a drive so you can then image it, where "disk_number" has been gathered using the "diskutil list" command. <b>BE VERY CAREFUL</b> not to unmount the wrong drive! (See <a href="index.html#diskutillist" target="blank">Find a drive location</a>.)</p>
+             <dl>
+               <dt> /dev/disk/disk_number</dt><dd>tells ddrescue where the filesystem is mounted.</dd>
+             </dl>
+             <p>To remount the drive</p>
+             <p><code>diskutil mountDisk /dev/disk/disk_number</code></p>
+             <p>Or just eject the drive after imaging</p>
+             <p><code>diskutil eject /dev/disk/</code></p>
+             <p class="link"></p>
+           </div>
+         </div>
+       </div>
+     </div>
+     <!-- ends Unmount drive with diskutil -->
+
+      <!-- Create disk image using ddrescue  -->
+      <span data-toggle="modal" data-target="#ddrescueimage"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Use ddrescue to image a drive (Mac)">Use ddrescue to image a drive (Mac)</button></span>
+      <div id="ddrescueimage" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="ddrescueimage_title">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="ddrescueimage_title" class="modal-title">Use ddrescue to image a drive (Mac)</h3>
+            </div>
+            <div class="modal-body">
+              <p>Creates a disk image of a unmounted filesystem. <a href="https://linux.die.net/man/1/ddrescue" target="_blank">ddrescue</a> can be installed for Mac using <a href="https://brew.sh/" target="_blank">Homebrew</a> with the command <code>brew install ddrescue</code></p>
+              <p>The drive will need to be <a href="index.html#diskutilunmount" target="blank">unmounted</a> before running ddrescue.</p>
+              <p><code>sudo ddrescue -n -v /dev/disk/disk_number /path/to/image.dd /path/to/image.logfile</code></p>
+              <p>This command is appropriate for mounted hard drives. If imaging optical media, replace /path/to/image.dd with /path/to/image.iso</p>
+              <dl>
+                <dt>sudo</dt><dd>runs the command as a super user or admin.</dd>
+                <dt> -n</dt><dd>tells ddrescue not retry or split errors.</dd>
+                <dt> -v</dt><dd>tells ddrescue to be verbose.</dd>
+                <dt> /dev/disk/disk_number</dt><dd>tells ddrescue where the filesystem is mounted.</dd>
+                <dt> /path/to/image.dd (or /path/to/image.iso)</dt><dd>tells ddrescue to create a file named "filename.dd" or "filename.iso" in a given place. </dd>
+                <dt> /path/to/image.logfile</dt><dd>tells ddrescue to create a log output called "image.logfile" in a given place. This logfile will be used in subsequent attempts to image if there are errors during the intial attempt.</dd>
+              </dl>
+              <p>If there are errors in the output visible in the terminal, run the following command</p>
+              <p><code>sudo ddrescue -d -r 3 -v /dev/disk/disk_number image.dd image.logfile</code></p>
+              <dl>
+                <dt>sudo</dt><dd>runs the command as a super user or admin.</dd>
+                <dt> -d</dt><dd>tells ddrescue to use the disk for direct input.</dd>
+                <dt> -r 3</dt><dd>tells ddrescue retry the sector with errors 3 times max.</dd>
+                <dt> -v</dt><dd>tells ddrescue to be verbose.</dd>
+                <dt> /dev/disk/disk_number</dt><dd>tells ddrescue where the filesystem is mounted.</dd>
+                <dt> /path/to/image.dd (or /path/to/image.iso)</dt><dd>tells ddrescue to append data to the file named "filename.dd" or "filename.iso" in a given place. </dd>
+                <dt> /path/to/image.logfile</dt><dd>tells ddrescue to refer to the existing logfiles so it will only read the necessary blocks.</dd>
+              </dl>
+              <p>Additional information can be found on the the <a href="https://www.gnu.org/software/ddrescue/ddrescue.html" target="_blank>">ddrescue site</a>, a related entry in the <a href="https://forensicswiki.xyz/wiki/index.php?title=Ddrescue" target="_blank">Forensics Wiki</a> and Johan van der Knijff's post <a href="https://www.bitsgalore.org/2019/03/22/a-simple-workflow-tool-for-imaging-optical-media-using-readom-and-ddrescue" target="_blank">
+A simple workflow tool for imaging optical media using readom and ddrescue</a></p>.
+              <p class="link"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ends Manage mounted drives and image them -->
 
     </div><!-- closes the big well -->
 
